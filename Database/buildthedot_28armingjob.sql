@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 17, 2014 at 05:01 AM
+-- Generation Time: Feb 17, 2014 at 11:13 AM
 -- Server version: 5.5.35-0ubuntu0.13.10.2
 -- PHP Version: 5.5.3-1ubuntu2.1
 
@@ -23,28 +23,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `buildthedot_armingjob_ad`
---
-
-CREATE TABLE IF NOT EXISTS `buildthedot_armingjob_ad` (
-  `PictureID` int(11) NOT NULL AUTO_INCREMENT,
-  `AdPic` text COLLATE utf8_unicode_ci NOT NULL,
-  `AdLink` text COLLATE utf8_unicode_ci NOT NULL,
-  `AdType` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
-  `AdPosition` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`PictureID`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
-
---
--- Dumping data for table `buildthedot_armingjob_ad`
---
-
-INSERT INTO `buildthedot_armingjob_ad` (`PictureID`, `AdPic`, `AdLink`, `AdType`, `AdPosition`) VALUES
-(3, '', 'http://www.jaspal.com/', 'Content_Ads', '1');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `buildthedot_armingjob_job`
 --
 
@@ -59,8 +37,8 @@ CREATE TABLE IF NOT EXISTS `buildthedot_armingjob_job` (
   `Saraly` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `JobDescription` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
   `Recomment` int(11) NOT NULL,
-  `StartTime` date NOT NULL,
-  `EndTime` date NOT NULL,
+  `date_start` date NOT NULL,
+  `date_end` date NOT NULL,
   `JobType` int(11) NOT NULL,
   PRIMARY KEY (`JobID`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
@@ -69,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `buildthedot_armingjob_job` (
 -- Dumping data for table `buildthedot_armingjob_job`
 --
 
-INSERT INTO `buildthedot_armingjob_job` (`JobID`, `CompanyName`, `PositionThai`, `PositionEng`, `Place`, `Quantity`, `property`, `Saraly`, `JobDescription`, `Recomment`, `StartTime`, `EndTime`, `JobType`) VALUES
+INSERT INTO `buildthedot_armingjob_job` (`JobID`, `CompanyName`, `PositionThai`, `PositionEng`, `Place`, `Quantity`, `property`, `Saraly`, `JobDescription`, `Recomment`, `date_start`, `date_end`, `JobType`) VALUES
 (1, 'Whiteboard.Co.,Ltd.', 'Marketing / Business Development', 'Marketing / Business Development', '888/41-44, 3rd floor of building behind Mahatun Plaza, Ploenchit Rd., Lumpini, Pathumwan, Bangkok 10330\r\n\r\n(ใกล้สถานีรถไฟฟ้าเพลินจิต)', '1', 'Experience in marketing/business development is advantage. But no experience is welcome/Good interpersonal and communication skills.  Strong presentation skills.', '3x,xxx ', 'Whiteboard is a small company that provided creative business IT solutions to our customers. We are expanding our business scope to both IT and Non-IT related business.\r\n \r\nJob Description : Establish relationships with customers B2B, or B2C. / Calling, or visiting clients on a regular basis, promoting features and benefits of the company products and services./ Develop new potential markets. /Develop and implement marketing plan. /Analyze the strengths and weaknesses of competitors, and monitor new trends. \r\n', 1, '2013-11-22', '2014-12-22', 1),
 (2, 'aaaa', 'aaaaaaa', 'aaaaaaaaaaa', 'aaaaaaaaaaaa', '2', 'aaaaaaaa', '10000', 'aaaaaa', 1, '2014-01-08', '2014-01-17', 2);
 
@@ -92,33 +70,6 @@ CREATE TABLE IF NOT EXISTS `buildthedot_armingjob_job_attribute` (
 
 INSERT INTO `buildthedot_armingjob_job_attribute` (`AttributeID`, `JobID`, `AtrributDescription`) VALUES
 (1, 1, 'Bachelor degree or higher');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `buildthedot_armingjob_job_idea`
---
-
-CREATE TABLE IF NOT EXISTS `buildthedot_armingjob_job_idea` (
-  `CompanyID` int(11) NOT NULL AUTO_INCREMENT,
-  `MainIdea` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
-  `Description` text COLLATE utf8_unicode_ci NOT NULL,
-  `Pic1` text COLLATE utf8_unicode_ci NOT NULL,
-  `Pic2` text COLLATE utf8_unicode_ci NOT NULL,
-  `Pic3` text COLLATE utf8_unicode_ci NOT NULL,
-  `IdeaRecomment` int(11) NOT NULL,
-  `IdeaTime` datetime NOT NULL,
-  `Status` int(11) NOT NULL,
-  PRIMARY KEY (`CompanyID`),
-  UNIQUE KEY `MainIdea` (`MainIdea`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
-
---
--- Dumping data for table `buildthedot_armingjob_job_idea`
---
-
-INSERT INTO `buildthedot_armingjob_job_idea` (`CompanyID`, `MainIdea`, `Description`, `Pic1`, `Pic2`, `Pic3`, `IdeaRecomment`, `IdeaTime`, `Status`) VALUES
-(1, 'OK 20', '<p><span style="background-color:#FFD700">ธุรกิจสุดฮิต! &nbsp; ลงทุนน้อย! สร้างกำไรอย่างมั่นคง!&nbsp;</span></p>\r\n\r\n<p><a href="http://www.ok20-shop.com/#" target="_blank"><img alt="" src="http://www.ok20-shop.com/images/resized/images/stories/slideshow/sl-1_960_360.jpg" style="height:360px; width:960px" /></a></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>แฟรนไชส์ร้านขายสินค้าทุกอย่าง 20 บาท จำหน่ายสินค้าลิขสิทธิ์ถูกต้อง มีสาขาที่เปิดจริงแล้วมากกว่า 70 สาขา ทั่วประเทศ</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<div style="background:#eee;border:1px solid #ccc;padding:5px 10px;"><strong><u><span style="font-family:georgia,serif"><span class="marker"><span style="background-color:#FF0000">โปรโมชั่นพิเศษ! รูปแบบที่ 1</span></span><span style="background-color:#FF0000">&nbsp;</span></span></u></strong></div>\r\n\r\n<p>ลงทุนวันนี้ เพียง 329,000 บาท ต่อ 1 คูหา (ลูกค้าต้องหาทำเลเอง) จัดร้านเสร็จใน 3 วัน</p>\r\n\r\n<p>ราคานี้รวม<em><u>ตกแต่งร้าน ชั้นวางของ เคาน์เตอร๋์คิดเงิน ป้าย ธงญี่ปุ่น สิ่งพิมพ์ (ใบปลิวจำนวน 2,000 ใบ) บริการจัดร้าน เรียงของพร้อมขาย รวมสินค้าภายในร้านมูลค่า 200,000 บาท </u></em></p>\r\n\r\n<p><img alt="" src="C:UsersLenovoDesktopOK20_SHOP_35.jpg" /><img alt="" src="C:UsersLenovoDesktopOK20_SHOP_35.jpg" /><a href="http://www.ok20-shop.com/index.php?option=com_content&amp;view=frontpage&amp;Itemid=85" target="_blank"><img alt="" src="http://www.ok20-shop.com/images/photo_ok20/a1/thumbs/OK20_SHOP_35.jpg" style="height:150px; width:150px" /></a>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.ok20-shop.com/index.php?option=com_content&amp;view=frontpage&amp;Itemid=85" target="_blank"><img alt="" src="http://www.ok20-shop.com/images/photo_ok20/a1/thumbs/OK20_SHOP_27.jpg" style="height:150px; width:150px" /></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<a href="http://www.ok20-shop.com/index.php?option=com_content&amp;view=frontpage&amp;Itemid=85" target="_blank"><img alt="" src="http://www.ok20-shop.com/images/photo_ok20/a1/thumbs/OK20_SHOP_6.jpg" style="height:150px; width:150px" /></a></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<div style="background:#eee;border:1px solid #ccc;padding:5px 10px;"><strong><u><span style="background-color:#FF0000">โปรโมชั่นพิเศษ! รูปแบบที่ 2</span></u></strong><span style="background-color:#FF0000">&nbsp;</span></div>\r\n\r\n<p><strong><span style="background-color:#FF0000">OK 20 Delivery</span></strong></p>\r\n\r\n<p>ราคาเพียง 529,000 บาท ราคานี้ประกอบด้วย</p>\r\n\r\n<p>- ค่ารถ 300,00 บาท</p>\r\n\r\n<p>- ค่าสินค้าภายในรถ 100,000 บาท</p>\r\n\r\n<p>- ค่าตกแต่ง,ดัดแปลง,ภาษี 129,000 บาท</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><a href="http://www.ok20-shop.com/index.php?option=com_content&amp;view=frontpage&amp;Itemid=85" target="_blank"><img alt="" src="http://www.ok20-shop.com/images/photo_ok20/a1/thumbs/OK20_DELIVERY2.jpg" style="height:150px; width:150px" /></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<a href="http://www.ok20-shop.com/index.php?option=com_content&amp;view=frontpage&amp;Itemid=85" target="_blank"><img alt="" src="http://www.ok20-shop.com/images/photo_ok20/a1/thumbs/OK20_DELIVERY.jpg" style="height:150px; width:150px" /></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<a href="http://www.ok20-shop.com/index.php?option=com_content&amp;view=frontpage&amp;Itemid=85" target="_blank"><img alt="" src="http://www.ok20-shop.com/images/photo_ok20/a1/thumbs/OK20_SHOP_18.jpg" style="height:150px; width:150px" /></a></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><span style="background-color:#FAEBD7">สนใจธุรกิจ สินค้าทุกอย่าง 20 บาท</span><span style="background-color:#FFA07A"> ติดต่อ คุณนพดล บุญโชคยิ่ง (เบนซ์)</span></p>\r\n\r\n<p><span style="background-color:#FFA500">Tel.084-8975555,085-0000020 </span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><span style="background-color:#FFD700">Website</span> : www.ok20-shop.com</p>\r\n\r\n<p>&nbsp;</p>\r\n', 'bi_1_pic1_2014-01-20 13:26:57_ok20.jpg', 'bi_1_pic2_2014-01-20 13:26:57_new_OK20_01.gif', 'bi_1_pic3_2014-01-20 13:26:57_OK20_2013_1.jpg', 1, '2014-02-02 11:58:46', 0);
 
 -- --------------------------------------------------------
 
@@ -238,8 +189,8 @@ CREATE TABLE IF NOT EXISTS `buildthedot_armingjob_user_history_educations` (
   `user_account_id` int(50) NOT NULL,
   `education_level` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `Institution` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `year_start` date NOT NULL,
-  `year_end` date NOT NULL,
+  `date_start` date NOT NULL,
+  `date_end` date NOT NULL,
   `educational_background` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`user_history_educations_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
@@ -248,7 +199,7 @@ CREATE TABLE IF NOT EXISTS `buildthedot_armingjob_user_history_educations` (
 -- Dumping data for table `buildthedot_armingjob_user_history_educations`
 --
 
-INSERT INTO `buildthedot_armingjob_user_history_educations` (`user_history_educations_id`, `user_account_id`, `education_level`, `Institution`, `year_start`, `year_end`, `educational_background`) VALUES
+INSERT INTO `buildthedot_armingjob_user_history_educations` (`user_history_educations_id`, `user_account_id`, `education_level`, `Institution`, `date_start`, `date_end`, `educational_background`) VALUES
 (1, 4, 'ปริญญาตรี', 'มหิดล', '2005-01-26', '2007-01-26', 'ปริญญาตรี');
 
 -- --------------------------------------------------------
@@ -262,8 +213,8 @@ CREATE TABLE IF NOT EXISTS `buildthedot_armingjob_user_history_experiences` (
   `user_account_id` int(11) NOT NULL,
   `job_position` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `company_name` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `year_start` date NOT NULL,
-  `year_end` date NOT NULL,
+  `date_start` date NOT NULL,
+  `date_end` date NOT NULL,
   `salary` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`user_history_experiences_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
@@ -278,10 +229,6 @@ CREATE TABLE IF NOT EXISTS `buildthedot_armingjob_user_history_talent_languages`
   `user_history_talent_languages_id` int(50) NOT NULL AUTO_INCREMENT,
   `user_account_id` int(50) NOT NULL,
   `language` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `score_speaking` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
-  `score_understanding` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
-  `score_reading` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
-  `score_writing` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`user_history_talent_languages_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
