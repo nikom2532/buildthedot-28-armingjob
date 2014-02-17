@@ -1,4 +1,8 @@
-package com.buildthedot.armingjob;
+package com.buildthedot.armingjob.app;
+
+import com.buildthedot.armingjob.R;
+import com.buildthedot.armingjob.R.layout;
+import com.buildthedot.armingjob.R.menu;
 
 import android.os.Bundle;
 import android.app.Activity;
