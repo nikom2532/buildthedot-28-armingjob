@@ -1,5 +1,7 @@
 package com.buildthedot.armingjob.app;
 
+import com.buildthedot.armingjob.R;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,9 +12,10 @@ public class SplashScreen extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setView();
+		setContentView(R.layout.activity_main);
+
+//		setView();
 		
 		// For View in another activity for development
 
