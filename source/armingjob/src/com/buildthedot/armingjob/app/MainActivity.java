@@ -23,15 +23,15 @@ public class MainActivity extends Activity {
 		// startActivity(intent);
 		// finish();
 		
-		new Handler().postDelayed(new Runnable() {
-
-			@Override
-			public void run() {
-				Intent i = new Intent(MainActivity.this, MainMenu.class);
-				startActivity(i);
-				finish();
-			}
-		}, SPLASH_TIME_OUT);
+//		new Handler().postDelayed(new Runnable() {
+//
+//			@Override
+//			public void run() {
+//				Intent i = new Intent(MainActivity.this, MainMenu.class);
+//				startActivity(i);
+//				finish();
+//			}
+//		}, SPLASH_TIME_OUT);
 	}
 
 	@Override
