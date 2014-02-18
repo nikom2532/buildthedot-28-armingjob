@@ -4,5 +4,7 @@
     <string name="app_name">armingjob</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="armingjob_mainmenu_login">Login</string>
+    <string name="armingjob_mainmenu_register">Register</string>
 
 </resources>
