@@ -16,6 +16,11 @@ public class MainMenu extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.mainmenu);
+		setView();
+	}
+	void setView(){
+		armingjob_mainmenu_login = (Button) findViewById(R.id.armingjob_mainmenu_login);
+		armingjob_mainmenu_register = (Button) findViewById(R.id.armingjob_mainmenu_register);
 	}
 	private void onclick() {
 		// TODO Auto-generated method stub
