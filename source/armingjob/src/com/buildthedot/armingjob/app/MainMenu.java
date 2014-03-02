@@ -4,8 +4,10 @@ import com.buildthedot.armingjob.R;
 import com.buildthedot.armingjob.R.layout;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.app.Activity;
+import android.content.Intent;
 
 public class MainMenu extends Activity {
 	
@@ -22,9 +24,18 @@ public class MainMenu extends Activity {
 		armingjob_mainmenu_login = (Button) findViewById(R.id.armingjob_mainmenu_login);
 		armingjob_mainmenu_register = (Button) findViewById(R.id.armingjob_mainmenu_register);
 	}
-	private void onclick() {
+	public void onclick(View v) {
 		// TODO Auto-generated method stub
-
+		if(armingjob_mainmenu_login.equals(v)){
+			Intent intent = new Intent(this, Login.class);
+			intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+			startActivity(intent);
+		}
+		else if(armingjob_mainmenu_register.equals(v)){
+			Intent intent = new Intent(this, Login.class);
+			intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+			startActivity(intent);
+		}
 	}
 
 }
