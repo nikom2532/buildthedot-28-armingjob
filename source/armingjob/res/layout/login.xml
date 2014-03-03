@@ -54,7 +54,7 @@
                 android:text="" />
             
             <Button
-                android:id="@+id/armingjob_mainmenu_register"
+                android:id="@+id/armingjob_mainmenu_login"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/armingjob_mainmenu_login" />
