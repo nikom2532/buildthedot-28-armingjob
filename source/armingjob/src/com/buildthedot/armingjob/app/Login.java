@@ -1,7 +1,11 @@
 package com.buildthedot.armingjob.app;
 
 import com.buildthedot.armingjob.R;
+import com.buildthedot.armingjob.function.DialogProcess;
+import com.buildthedot.armingjob.response.ResponseLogin;
+import com.buildthedot.armingjob.service.ConnectApi;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -30,7 +34,21 @@ public class Login extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View v){
 		if(armingjob_mainmenu_login.equals(v)){
-			
+			new requestLogin().execute();
 		}
+	}
+	
+	private class requestLogin extends AsyncTask<String, Void, ResponseLogin>{
+
+		DialogProcess dialog = new DialogProcess(Login.this);
+		ConnectApi connApi = new ConnectApi(Login.this);
+		
+		
+		@Override
+		protected ResponseLogin doInBackground(String... arg0) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+		
 	}
 }
