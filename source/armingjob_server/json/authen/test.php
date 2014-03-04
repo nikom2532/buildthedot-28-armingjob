@@ -16,9 +16,13 @@
 	// We'll include the $id parameter so that we
 	// can show that it has been passed in correctly.
 	// You can send whatever data you like.
-	$data = array("Hello", $id);
+	$data = array(
+		"email" => $id ,
+		"pass" => "Thailand" 
+	);
 	
 	// Send the data.
 	echo json_encode($data);
+	//print_r($data);
 
 ?>

@@ -3,6 +3,8 @@ package com.buildthedot.armingjob.response;
 public class ResponseLogin {
 	String responseStatus = "";
 	String temp_json_data = "";
+	public String email = "";
+	public String password = "";
 
 	public String getTemp_json_data() {
 		return temp_json_data;
