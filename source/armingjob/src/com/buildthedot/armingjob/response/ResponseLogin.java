@@ -1,6 +1,6 @@
-package com.buildthedot.armingjob.request;
+package com.buildthedot.armingjob.response;
 
-public class P_Login {
+public class ResponseLogin {
 	String responseStatus = "";
 	String temp_json_data = "";
 
