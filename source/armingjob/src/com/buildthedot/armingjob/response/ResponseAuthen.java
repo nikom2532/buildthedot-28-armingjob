@@ -1,8 +1,8 @@
 package com.buildthedot.armingjob.response;
 
 public class ResponseAuthen {
-	String responseStatus = "";
 	String temp_json_data = "";
+	String responseStatus = "";
 	public String email = "";
 	public String password = "";
 

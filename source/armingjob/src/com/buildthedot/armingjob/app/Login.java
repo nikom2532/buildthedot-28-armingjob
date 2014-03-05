@@ -34,6 +34,8 @@ public class Login extends Activity implements OnClickListener {
 		armingjob_mainmenu_password = (EditText) findViewById(R.id.armingjob_mainmenu_password);
 		armingjob_mainmenu_login = (Button) findViewById(R.id.armingjob_mainmenu_login);
 		armingjob_mainmenu_login.setOnClickListener(this);
+		armingjob_mainmenu_email.setText("emailtext");
+		armingjob_mainmenu_password.setText("passwordtext");
 	}
 	
 	@Override
@@ -55,6 +57,8 @@ public class Login extends Activity implements OnClickListener {
 		public requestLogin(){
 			requestAuthen.email = armingjob_mainmenu_email.getText().toString();
 			requestAuthen.password = armingjob_mainmenu_password.getText().toString();
+			
+			Log.v("password", requestAuthen.password);
 		}
 		
 		@Override
@@ -80,7 +84,8 @@ public class Login extends Activity implements OnClickListener {
 			dialog.dismiss();
 			
 			Log.v("login", "pass3");
-//			Log.v("email", result.email);
+			Log.v("json", result.toString());
+//			Log.v("email", result.password.toString());
 		}
 		
 	}
