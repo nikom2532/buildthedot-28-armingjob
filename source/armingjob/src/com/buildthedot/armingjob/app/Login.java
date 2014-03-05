@@ -5,6 +5,7 @@ import com.buildthedot.armingjob.function.DialogProcess;
 import com.buildthedot.armingjob.request.RequestAuthen;
 import com.buildthedot.armingjob.response.ResponseAuthen;
 import com.buildthedot.armingjob.service.ConnectApi;
+import com.buildthedot.armingjob.service.HttpRequestPost;
 import com.google.gson.Gson;
 
 import android.os.AsyncTask;
@@ -74,6 +75,9 @@ public class Login extends Activity implements OnClickListener {
 			// TODO Auto-generated method stub
 			
 			JSONObjSend = new Gson().toJson(requestAuthen);
+			
+			Log.v("JSONObjSend", JSONObjSend);
+			
 			ResponseAuthen responseAuthen = connApi.requestLogin(JSONObjSend);
 			return responseAuthen;
 		}
@@ -84,8 +88,13 @@ public class Login extends Activity implements OnClickListener {
 			dialog.dismiss();
 			
 			Log.v("login", "pass3");
-			Log.v("json", result.toString());
+//			Log.v("json", result.toString());
 //			Log.v("email", result.password.toString());
+			
+//			HttpRequestPost post2 = new HttpRequestPost();
+//			String responseText2 = post2.httpQuery("http://arming/28.farmseller/buildthedot-28-armingjob/source/armingjob_server/json/authen/test.php?id=a", JSONObjSend);
+//			Log.v("json_req", responseText2.toString());
+			
 		}
 		
 	}

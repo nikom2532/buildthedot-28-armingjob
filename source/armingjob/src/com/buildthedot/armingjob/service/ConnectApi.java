@@ -61,10 +61,10 @@ public class ConnectApi {
 	public ResponseAuthen requestLogin(String mJsonRequest) {
 		HttpRequestPost post = new HttpRequestPost();
 		String responseText = post.httpQuery("http://arming/28.farmseller/buildthedot-28-armingjob/source/armingjob_server/json/authen/test.php?id=a", mJsonRequest);
-		if (responseText != null && !responseText.equals("")) {
-			ResponseAuthen rs = new Gson().fromJson(responseText, ResponseAuthen.class);
-			return rs;
-		}
+//		if (responseText != null && !responseText.equals("")) {
+//			ResponseAuthen rs = new Gson().fromJson(responseText, ResponseAuthen.class);
+//			return rs;
+//		}
 		return null;
 	}
 }
