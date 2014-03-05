@@ -2,8 +2,10 @@ package com.buildthedot.armingjob.app;
 
 import com.buildthedot.armingjob.R;
 import com.buildthedot.armingjob.function.DialogProcess;
-import com.buildthedot.armingjob.response.ResponseLogin;
+import com.buildthedot.armingjob.request.RequestAuthen;
+import com.buildthedot.armingjob.response.ResponseAuthen;
 import com.buildthedot.armingjob.service.ConnectApi;
+import com.google.gson.Gson;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -42,11 +44,18 @@ public class Login extends Activity implements OnClickListener {
 		}
 	}
 	
-	private class requestLogin extends AsyncTask<String, Void, ResponseLogin>{
+	private class requestLogin extends AsyncTask<String, Void, ResponseAuthen>{
 
 		
 		DialogProcess dialog = new DialogProcess(Login.this);
 		ConnectApi connApi = new ConnectApi(Login.this);
+		RequestAuthen requestAuthen = new RequestAuthen();
+		String JSONObjSend;
+		
+		public requestLogin(){
+			requestAuthen.email = armingjob_mainmenu_email.getText().toString();
+			requestAuthen.password = armingjob_mainmenu_password.getText().toString();
+		}
 		
 		@Override
 		protected void onPreExecute() {
@@ -57,18 +66,21 @@ public class Login extends Activity implements OnClickListener {
 		}
 		
 		@Override
-		protected ResponseLogin doInBackground(String... arg0) {
+		protected ResponseAuthen doInBackground(String... arg0) {
 			// TODO Auto-generated method stub
-			return null;
+			
+			JSONObjSend = new Gson().toJson(requestAuthen);
+			ResponseAuthen responseAuthen = connApi.requestLogin(JSONObjSend);
+			return responseAuthen;
 		}
 		
 		@Override
-		protected void onPostExecute(ResponseLogin result) {
+		protected void onPostExecute(ResponseAuthen result) {
 			super.onPostExecute(result);
 			dialog.dismiss();
 			
 			Log.v("login", "pass3");
-			//Log.v("email", result.email);
+//			Log.v("email", result.email);
 		}
 		
 	}

@@ -1,6 +1,6 @@
 package com.buildthedot.armingjob.response;
 
-public class ResponseLogin {
+public class ResponseAuthen {
 	String responseStatus = "";
 	String temp_json_data = "";
 	public String email = "";

@@ -6,7 +6,7 @@ import org.json.JSONObject;
 import android.content.Context;
 
 import com.buildthedot.armingjob.function.writeLog;
-import com.buildthedot.armingjob.response.ResponseLogin;
+import com.buildthedot.armingjob.response.ResponseAuthen;
 import com.google.gson.Gson;
 
 public class ConnectApi {
@@ -58,11 +58,11 @@ public class ConnectApi {
 		return false;
 	}
 	
-	public ResponseLogin requestLogin(String mJsonRequest) {
+	public ResponseAuthen requestLogin(String mJsonRequest) {
 		HttpRequestPost post = new HttpRequestPost();
 		String responseText = post.httpQuery("http://arming/28.farmseller/buildthedot-28-armingjob/source/armingjob_server/json/authen/test.php?id=a", mJsonRequest);
 		if (responseText != null && !responseText.equals("")) {
-			ResponseLogin rs = new Gson().fromJson(responseText, ResponseLogin.class);
+			ResponseAuthen rs = new Gson().fromJson(responseText, ResponseAuthen.class);
 			return rs;
 		}
 		return null;
