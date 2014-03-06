@@ -17,7 +17,7 @@
 	// can show that it has been passed in correctly.
 	// You can send whatever data you like.
 	$data = array(
-		"email" => $id ,
+		"email" => "aaa" ,
 		"password" => "Thailand" 
 	);
 	
