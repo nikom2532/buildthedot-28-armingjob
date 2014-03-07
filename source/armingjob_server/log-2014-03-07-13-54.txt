@@ -1,0 +1,53 @@
+03-07 13:53:47.355: E/AndroidRuntime(5928): FATAL EXCEPTION: AsyncTask #1
+03-07 13:53:47.355: E/AndroidRuntime(5928): java.lang.RuntimeException: An error occured while executing doInBackground()
+03-07 13:53:47.355: E/AndroidRuntime(5928): 	at android.os.AsyncTask$3.done(AsyncTask.java:299)
+03-07 13:53:47.355: E/AndroidRuntime(5928): 	at java.util.concurrent.FutureTask$Sync.innerSetException(FutureTask.java:273)
+03-07 13:53:47.355: E/AndroidRuntime(5928): 	at java.util.concurrent.FutureTask.setException(FutureTask.java:124)
+03-07 13:53:47.355: E/AndroidRuntime(5928): 	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:307)
+03-07 13:53:47.355: E/AndroidRuntime(5928): 	at java.util.concurrent.FutureTask.run(FutureTask.java:137)
+03-07 13:53:47.355: E/AndroidRuntime(5928): 	at android.os.AsyncTask$SerialExecutor$1.run(AsyncTask.java:230)
+03-07 13:53:47.355: E/AndroidRuntime(5928): 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1076)
+03-07 13:53:47.355: E/AndroidRuntime(5928): 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:569)
+03-07 13:53:47.355: E/AndroidRuntime(5928): 	at java.lang.Thread.run(Thread.java:856)
+03-07 13:53:47.355: E/AndroidRuntime(5928): Caused by: com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+03-07 13:53:47.355: E/AndroidRuntime(5928): 	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+03-07 13:53:47.355: E/AndroidRuntime(5928): 	at com.google.gson.Gson.fromJson(Gson.java:803)
+03-07 13:53:47.355: E/AndroidRuntime(5928): 	at com.google.gson.Gson.fromJson(Gson.java:768)
+03-07 13:53:47.355: E/AndroidRuntime(5928): 	at com.google.gson.Gson.fromJson(Gson.java:717)
+03-07 13:53:47.355: E/AndroidRuntime(5928): 	at com.google.gson.Gson.fromJson(Gson.java:689)
+03-07 13:53:47.355: E/AndroidRuntime(5928): 	at com.buildthedot.armingjob.service.ConnectApi.requestLogin(ConnectApi.java:65)
+03-07 13:53:47.355: E/AndroidRuntime(5928): 	at com.buildthedot.armingjob.app.Login$requestLogin.doInBackground(Login.java:81)
+03-07 13:53:47.355: E/AndroidRuntime(5928): 	at com.buildthedot.armingjob.app.Login$requestLogin.doInBackground(Login.java:1)
+03-07 13:53:47.355: E/AndroidRuntime(5928): 	at android.os.AsyncTask$2.call(AsyncTask.java:287)
+03-07 13:53:47.355: E/AndroidRuntime(5928): 	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:305)
+03-07 13:53:47.355: E/AndroidRuntime(5928): 	... 5 more
+03-07 13:53:47.355: E/AndroidRuntime(5928): Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+03-07 13:53:47.355: E/AndroidRuntime(5928): 	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+03-07 13:53:47.355: E/AndroidRuntime(5928): 	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+03-07 13:53:47.355: E/AndroidRuntime(5928): 	... 14 more
+03-07 13:53:56.355: I/Choreographer(5928): Skipped 514 frames!  The application may be doing too much work on its main thread.
+03-07 13:53:56.475: E/SpannableStringBuilder(5928): SPAN_EXCLUSIVE_EXCLUSIVE spans cannot have a zero length
+03-07 13:53:56.475: E/SpannableStringBuilder(5928): SPAN_EXCLUSIVE_EXCLUSIVE spans cannot have a zero length
+03-07 13:53:56.485: E/WindowManager(5928): Activity com.buildthedot.armingjob.app.Login has leaked window com.android.internal.policy.impl.PhoneWindow$DecorView@41b8b6b0 that was originally added here
+03-07 13:53:56.485: E/WindowManager(5928): android.view.WindowLeaked: Activity com.buildthedot.armingjob.app.Login has leaked window com.android.internal.policy.impl.PhoneWindow$DecorView@41b8b6b0 that was originally added here
+03-07 13:53:56.485: E/WindowManager(5928): 	at android.view.ViewRootImpl.<init>(ViewRootImpl.java:412)
+03-07 13:53:56.485: E/WindowManager(5928): 	at android.view.WindowManagerImpl.addView(WindowManagerImpl.java:312)
+03-07 13:53:56.485: E/WindowManager(5928): 	at android.view.WindowManagerImpl.addView(WindowManagerImpl.java:224)
+03-07 13:53:56.485: E/WindowManager(5928): 	at android.view.WindowManagerImpl$CompatModeWrapper.addView(WindowManagerImpl.java:149)
+03-07 13:53:56.485: E/WindowManager(5928): 	at android.view.Window$LocalWindowManager.addView(Window.java:554)
+03-07 13:53:56.485: E/WindowManager(5928): 	at android.app.Dialog.show(Dialog.java:277)
+03-07 13:53:56.485: E/WindowManager(5928): 	at com.buildthedot.armingjob.app.Login$requestLogin.onPreExecute(Login.java:68)
+03-07 13:53:56.485: E/WindowManager(5928): 	at android.os.AsyncTask.executeOnExecutor(AsyncTask.java:586)
+03-07 13:53:56.485: E/WindowManager(5928): 	at android.os.AsyncTask.execute(AsyncTask.java:534)
+03-07 13:53:56.485: E/WindowManager(5928): 	at com.buildthedot.armingjob.app.Login.onClick(Login.java:46)
+03-07 13:53:56.485: E/WindowManager(5928): 	at android.view.View.performClick(View.java:4223)
+03-07 13:53:56.485: E/WindowManager(5928): 	at android.view.View$PerformClick.run(View.java:17275)
+03-07 13:53:56.485: E/WindowManager(5928): 	at android.os.Handler.handleCallback(Handler.java:615)
+03-07 13:53:56.485: E/WindowManager(5928): 	at android.os.Handler.dispatchMessage(Handler.java:92)
+03-07 13:53:56.485: E/WindowManager(5928): 	at android.os.Looper.loop(Looper.java:137)
+03-07 13:53:56.485: E/WindowManager(5928): 	at android.app.ActivityThread.main(ActivityThread.java:4898)
+03-07 13:53:56.485: E/WindowManager(5928): 	at java.lang.reflect.Method.invokeNative(Native Method)
+03-07 13:53:56.485: E/WindowManager(5928): 	at java.lang.reflect.Method.invoke(Method.java:511)
+03-07 13:53:56.485: E/WindowManager(5928): 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:1008)
+03-07 13:53:56.485: E/WindowManager(5928): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:775)
+03-07 13:53:56.485: E/WindowManager(5928): 	at dalvik.system.NativeStart.main(Native Method)
