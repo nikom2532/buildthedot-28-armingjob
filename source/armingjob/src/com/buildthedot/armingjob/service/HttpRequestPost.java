@@ -1,5 +1,10 @@
 package com.buildthedot.armingjob.service;
 
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+
+import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
@@ -47,9 +52,19 @@ public class HttpRequestPost {
 			httppost.setEntity(new StringEntity(jsonRequest, "UTF-8"));
 			HttpResponse response = new DefaultHttpClient().execute(httppost);
 			responseText = EntityUtils.toString(response.getEntity() , "UTF-8");
-//			if (!isJSONformatted(responseText))
-//				return null;
+			
+			
+//			//if (!isJSONformatted(responseText))
+//			//	return null;
+			
 			return responseText;
+			
+//			HttpEntity getResponseEntity = response.getEntity();
+//			InputStream httpResponseStream = getResponseEntity.getContent();
+//			Reader inputStreamReader = new InputStreamReader(httpResponseStream);
+//			
+//			return inputStreamReader;
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;

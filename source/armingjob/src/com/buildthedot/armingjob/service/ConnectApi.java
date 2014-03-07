@@ -60,10 +60,11 @@ public class ConnectApi {
 	
 	public ResponseAuthen requestLogin(String mJsonRequest) {
 		HttpRequestPost post = new HttpRequestPost();
-//		String responseText = post.httpQuery("http://i-ming.com/20140306.imingjob/json/authen/test.php", mJsonRequest);
+		String responseText = post.httpQuery("http://i-ming.com/20140306.imingjob/json/authen/test.php", mJsonRequest);
 //		String responseText = post.httpQuery("http://pipes.yahoo.com/pipes/pipe.run?_id=953cf8d83df81a7bafcde079568e0eeb&_render=json&mindigg=1000", mJsonRequest);
+//		String responseText = post.httpQuery("http://i-ming.com/20140306.imingjob/json/authen/test.json", mJsonRequest);
 		
-		String responseText = post.httpQuery("http://i-ming.com/20140306.imingjob/json/authen/test.json", mJsonRequest);
+//		String responseText = post.httpQuery("http://api.androidsmith.com/capitals.php", mJsonRequest);
 		
 		if (responseText != null && !responseText.equals("")) {
 			ResponseAuthen rs = new Gson().fromJson(responseText, ResponseAuthen.class);

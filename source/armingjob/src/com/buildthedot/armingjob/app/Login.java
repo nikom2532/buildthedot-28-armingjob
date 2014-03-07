@@ -88,6 +88,7 @@ public class Login extends Activity implements OnClickListener {
 			dialog.dismiss();
 			
 			Log.v("login", "pass3");
+			Log.v("lgin", result.toString());
 //			Log.v("json", result.toString());
 //			Log.v("email", result.password.toString());
 			
