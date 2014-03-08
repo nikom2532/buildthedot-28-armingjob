@@ -1,7 +1,4 @@
 <?php
-	$rootpath="../../";
-	include($rootpath."config/header.php");
-
 	// Prevent caching.
 	header('Cache-Control: no-cache, must-revalidate');
 	header('Expires: Mon, 01 Jan 1996 00:00:00 GMT');
@@ -24,5 +21,4 @@
 	// Send the data.
 	echo json_encode($data);
 	//print_r($data);
-
 ?>
