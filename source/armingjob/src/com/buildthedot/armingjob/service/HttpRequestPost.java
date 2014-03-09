@@ -13,6 +13,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 
 import android.text.TextUtils;
+import android.util.Log;
 
 public class HttpRequestPost {
 	public HttpRequestPost() {
@@ -50,9 +51,11 @@ public class HttpRequestPost {
 
 			httppost = new HttpPost(urlPost);
 			httppost.setEntity(new StringEntity(jsonRequest, "UTF-8"));
+			
 			HttpResponse response = new DefaultHttpClient().execute(httppost);
 			responseText = EntityUtils.toString(response.getEntity() , "UTF-8");
 			
+//			Log.v("TestReadPOST", responseText.toString());
 			
 //			//if (!isJSONformatted(responseText))
 //			//	return null;

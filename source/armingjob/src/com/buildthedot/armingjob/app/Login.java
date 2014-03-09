@@ -88,9 +88,8 @@ public class Login extends Activity implements OnClickListener {
 			dialog.dismiss();
 			
 			Log.v("login", "pass3");
-			Log.v("lgin", result.toString());
-//			Log.v("json", result.toString());
-//			Log.v("email", result.password.toString());
+			Log.v("result", result.toString());
+			Log.v("result.email", result.email.toString());
 			
 //			HttpRequestPost post2 = new HttpRequestPost();
 //			String responseText2 = post2.httpQuery("http://arming/28.farmseller/buildthedot-28-armingjob/source/armingjob_server/json/authen/test.php?id=a", JSONObjSend);
