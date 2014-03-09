@@ -18,11 +18,19 @@
 	
 
 	$data = array(
-		"email" => "-".var_dump("\$_POST = ", $_POST)."-" ,
+		"email" => "-".$email."-" ,
 		"password" => "Thailand" 
 	);
 	
 	// Send the data.
 	echo json_encode($data);
 	//print_r($data);
+
+	$file = 'test.txt';
+	// Open the file to get existing content
+	$current = file_get_contents($file);
+	// Append a new person to the file
+	$current .= print_r($_POST);
+	// Write the contents back to the file
+	file_put_contents($file, $current);
 ?>
