@@ -18,7 +18,7 @@
 	
 
 	$data = array(
-		"email" => $email."-".$password ,
+		"email" => "-".var_dump("\$_POST = ", $_POST)."-" ,
 		"password" => "Thailand" 
 	);
 	
