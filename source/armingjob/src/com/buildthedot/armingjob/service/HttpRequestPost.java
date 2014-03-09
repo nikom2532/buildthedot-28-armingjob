@@ -9,7 +9,6 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 
 import android.text.TextUtils;
-import android.util.Log;
 
 public class HttpRequestPost {
 	public HttpRequestPost() {
