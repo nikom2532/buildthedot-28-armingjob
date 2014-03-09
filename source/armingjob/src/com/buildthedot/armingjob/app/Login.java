@@ -28,7 +28,6 @@ public class Login extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login);
 		setView();
-		Log.v("login", "1");
 	}
 	void setView(){
 		armingjob_mainmenu_email = (EditText) findViewById(R.id.armingjob_mainmenu_email);
@@ -42,13 +41,11 @@ public class Login extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View v){
 		if(armingjob_mainmenu_login.equals(v)){
-			Log.v("login", "click");
 			new requestLogin().execute();
 		}
 	}
 	
 	private class requestLogin extends AsyncTask<String, Void, ResponseAuthen>{
-
 		
 		DialogProcess dialog = new DialogProcess(Login.this);
 		ConnectApi connApi = new ConnectApi(Login.this);
@@ -58,16 +55,12 @@ public class Login extends Activity implements OnClickListener {
 		public requestLogin(){
 			requestAuthen.email = armingjob_mainmenu_email.getText().toString();
 			requestAuthen.password = armingjob_mainmenu_password.getText().toString();
-			
-			Log.v("password", requestAuthen.password);
 		}
 		
 		@Override
 		protected void onPreExecute() {
 			super.onPreExecute();
 			dialog.show();
-			
-			Log.v("login", "pass2");
 		}
 		
 		@Override
@@ -75,9 +68,6 @@ public class Login extends Activity implements OnClickListener {
 			// TODO Auto-generated method stub
 			
 			JSONObjSend = new Gson().toJson(requestAuthen);
-			
-			Log.v("JSONObjSend", JSONObjSend);
-			
 			ResponseAuthen responseAuthen = connApi.requestLogin(JSONObjSend);
 			return responseAuthen;
 		}
@@ -87,15 +77,8 @@ public class Login extends Activity implements OnClickListener {
 			super.onPostExecute(result);
 			dialog.dismiss();
 			
-			Log.v("login", "pass3");
-			Log.v("result", result.toString());
 			Log.v("result.email", result.email.toString());
 			
-//			HttpRequestPost post2 = new HttpRequestPost();
-//			String responseText2 = post2.httpQuery("http://arming/28.farmseller/buildthedot-28-armingjob/source/armingjob_server/json/authen/test.php?id=a", JSONObjSend);
-//			Log.v("json_req", responseText2.toString());
-			
 		}
-		
 	}
 }

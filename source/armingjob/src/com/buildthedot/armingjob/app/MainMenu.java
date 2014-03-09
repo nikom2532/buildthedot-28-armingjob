@@ -30,8 +30,6 @@ public class MainMenu extends Activity implements OnClickListener {
 	
 	@Override
 	public void onClick(View v) {
-		Log.v("login labelaaa", armingjob_mainmenu_login.getText().toString());
-		// TODO Auto-generated method stub
 		if(armingjob_mainmenu_login.equals(v)){
 			Log.v("login label", armingjob_mainmenu_login.getText().toString());
 			Intent intent = new Intent(this, Login.class);

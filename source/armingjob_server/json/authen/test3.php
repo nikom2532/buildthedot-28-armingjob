@@ -7,8 +7,8 @@
 	header('Content-type: application/json');
 	
 	// This ID parameter is sent by our javascript client.
-	$email = $_REQUESET['email'];
-	$password = $_REQUESET['password'];
+	$email = $_POST['email'];
+	$password = $_POST['password'];
 	
 	// Here's some data that we want to send via JSON.
 	// We'll include the $id parameter so that we
