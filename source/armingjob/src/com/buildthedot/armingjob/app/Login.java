@@ -52,7 +52,7 @@ public class Login extends Activity implements OnClickListener {
 		RequestAuthen requestAuthen = new RequestAuthen();
 		String JSONObjSend;
 		
-		public requestLogin(){
+		public requestLogin() {
 			requestAuthen.email = armingjob_mainmenu_email.getText().toString();
 			requestAuthen.password = armingjob_mainmenu_password.getText().toString();
 		}
@@ -68,7 +68,9 @@ public class Login extends Activity implements OnClickListener {
 			// TODO Auto-generated method stub
 			
 			JSONObjSend = new Gson().toJson(requestAuthen);
-			ResponseAuthen responseAuthen = connApi.requestLogin(JSONObjSend);
+//			ResponseAuthen responseAuthen = connApi.requestLogin2(JSONObjSend);
+			
+			ResponseAuthen responseAuthen = connApi.requestLogin(requestAuthen.email, requestAuthen.password);
 			return responseAuthen;
 		}
 		
