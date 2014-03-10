@@ -10,6 +10,10 @@ import com.buildthedot.armingjob.function.writeLog;
 import com.buildthedot.armingjob.response.ResponseAuthen;
 import com.google.gson.Gson;
 
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 public class ConnectApi {
 	Context context;
 	String responseText;
@@ -89,6 +93,27 @@ public class ConnectApi {
 //		String url = "http://arming/buildthedot/27.farmseller/buildthedot-28-armingjob/source/armingjob_server/json/authen/test6.php";
 		
 		HttpParameter mHttpParameter = new HttpParameter();
+		
+//		password = md5(sha1(password)).sha1(md5(password));
+		byte[] bytesOfMessage;
+		try {
+			bytesOfMessage = password.getBytes("UTF-8");
+		} catch (UnsupportedEncodingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+		MessageDigest md = null;
+		try {
+			md = MessageDigest.getInstance("MD5");
+		} catch (NoSuchAlgorithmException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		byte[] thedigest = md.digest(bytesOfMessage);
+		
+		
+		
 		
 		mHttpParameter.setParam("email", email);
 		mHttpParameter.setParam("password", password);
