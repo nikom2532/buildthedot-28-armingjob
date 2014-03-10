@@ -85,7 +85,8 @@ public class ConnectApi {
 	
 	public ResponseAuthen requestLogin(String email, String password) {
 		HttpRequestPost post = new HttpRequestPost();
-		String url = "http://i-ming.com/20140306.imingjob/json/authen/test3.php";
+		String url = "http://i-ming.com/20140306.imingjob/json/authen/test6.php";
+		url = "http://arming/buildthedot/27.farmseller/buildthedot-28-armingjob/source/armingjob_server/json/authen/test6.php";
 		
 		HttpParameter mHttpParameter = new HttpParameter();
 		
