@@ -1,7 +1,7 @@
 <?php
 
 	$rootpath="../../";
-	// include($rootpath."config/header.php");
+	include($rootpath."config/header.php");
 	
 	// Prevent caching.
 	header('Cache-Control: no-cache, must-revalidate');
