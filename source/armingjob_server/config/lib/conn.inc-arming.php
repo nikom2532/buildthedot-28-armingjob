@@ -6,5 +6,5 @@
 	// $db=new DB($host,$username,$password,$database);
 
 	$cn = @mysql_connect("localhost","iming","iming");
-	mysql_select_db("buildthedot_28armingjob",$cn);
+	@mysql_select_db("buildthedot_28armingjob",$cn);
 ?>
