@@ -34,8 +34,8 @@ public class Login extends Activity implements OnClickListener {
 		armingjob_mainmenu_password = (EditText) findViewById(R.id.armingjob_mainmenu_password);
 		armingjob_mainmenu_login = (Button) findViewById(R.id.armingjob_mainmenu_login);
 		armingjob_mainmenu_login.setOnClickListener(this);
-		armingjob_mainmenu_email.setText("emailtext");
-		armingjob_mainmenu_password.setText("passwordtext");
+		armingjob_mainmenu_email.setText("nikom2532@gmail.com");
+		armingjob_mainmenu_password.setText("77de54ccf56eb6f7dbf99e4d3be949ab6f9b0a55df8ac28564cb9f63a10be8af6ab3f7c2");
 	}
 	
 	@Override
