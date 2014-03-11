@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.app.Activity;
 import android.content.Intent;
 
-public class MainMenu extends Activity implements OnClickListener {
+public class HomePage extends Activity implements OnClickListener {
 	
 	Button armingjob_mainmenu_login;
 	Button armingjob_mainmenu_register;
@@ -18,7 +18,7 @@ public class MainMenu extends Activity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.mainmenu);
+		setContentView(R.layout.homepage);
 		setView();
 	}
 	void setView(){

@@ -37,7 +37,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.buildthedot.armingjob.app.MainMenu"
+            android:name="com.buildthedot.armingjob.app.HomePage"
             android:screenOrientation="portrait" >
         </activity>
         <activity
