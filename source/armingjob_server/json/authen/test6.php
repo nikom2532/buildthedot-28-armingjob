@@ -14,18 +14,25 @@
 	// This ID parameter is sent by our javascript client.
 	$email = $_POST['email'];
 	$password = $_POST['password'];
+	$EncryptPassword = md5(sha1($password)).sha1(md5($password));
 	
-	$return = "not OK";
+	$message = "notAuthened";
 	$sql_user = "
 		SELECT *
 		FROM `buildthedot_armingjob_user_account`
 		WHERE `email` = '{$email}';
 	";
 	$result_user = @mysql_query($sql_user);
-	while ($rs_user = @mysql_fetch_array($result_user)) {
-		if($password == $rs_user["password"]){
-			$return = "OK";
+	if($rs_user = @mysql_fetch_array($result_user)) {
+		if($EncryptPassword == $rs_user["password"]){
+			$message = "Authened";
 		}
+		elseif($EncryptPassword != $rs_user["password"]){
+			$message = "wrongPassword";
+		}
+	}
+	else{
+		$message = "wrongUser";
 	}
 	
 	
@@ -37,8 +44,9 @@
 	
 
 	$data = array(
-		"email" => $return ,
-		"password" => "Thailand" 
+		"email" => $email ,
+		"password" => $EncryptPassword,
+		"message" => $message 
 	);
 	
 	// Send the data.

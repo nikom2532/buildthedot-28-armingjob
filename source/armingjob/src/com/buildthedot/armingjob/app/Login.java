@@ -1,5 +1,8 @@
 package com.buildthedot.armingjob.app;
 
+import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
+
 import com.buildthedot.armingjob.R;
 import com.buildthedot.armingjob.function.DialogProcess;
 import com.buildthedot.armingjob.request.RequestAuthen;
@@ -35,7 +38,8 @@ public class Login extends Activity implements OnClickListener {
 		armingjob_mainmenu_login = (Button) findViewById(R.id.armingjob_mainmenu_login);
 		armingjob_mainmenu_login.setOnClickListener(this);
 		armingjob_mainmenu_email.setText("nikom2532@gmail.com");
-		armingjob_mainmenu_password.setText("77de54ccf56eb6f7dbf99e4d3be949ab6f9b0a55df8ac28564cb9f63a10be8af6ab3f7c2");
+//		armingjob_mainmenu_password.setText("77de54ccf56eb6f7dbf99e4d3be949ab6f9b0a55df8ac28564cb9f63a10be8af6ab3f7c2");
+		armingjob_mainmenu_password.setText("a");
 	}
 	
 	@Override
@@ -70,7 +74,16 @@ public class Login extends Activity implements OnClickListener {
 			JSONObjSend = new Gson().toJson(requestAuthen);
 //			ResponseAuthen responseAuthen = connApi.requestLogin2(JSONObjSend);
 			
-			ResponseAuthen responseAuthen = connApi.requestLogin(requestAuthen.email, requestAuthen.password);
+			ResponseAuthen responseAuthen = null;
+			try {
+				responseAuthen = connApi.requestLogin(requestAuthen.email, requestAuthen.password);
+			} catch (NoSuchAlgorithmException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			return responseAuthen;
 		}
 		
@@ -80,7 +93,14 @@ public class Login extends Activity implements OnClickListener {
 			dialog.dismiss();
 			
 			Log.v("result.email", result.email.toString());
+			Log.v("result.password", result.message.toString());
 			
+			if(result.message.toString().equals("Authened")){
+				
+			}
+			else if(result.message.toString().equals("Authened")){
+				
+			}
 		}
 	}
 }

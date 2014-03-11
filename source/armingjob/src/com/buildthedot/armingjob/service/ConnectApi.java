@@ -6,10 +6,12 @@ import org.json.JSONObject;
 import android.content.Context;
 import android.util.Log;
 
+import com.buildthedot.armingjob.function.computeSecurity;
 import com.buildthedot.armingjob.function.writeLog;
 import com.buildthedot.armingjob.response.ResponseAuthen;
 import com.google.gson.Gson;
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -87,23 +89,19 @@ public class ConnectApi {
 		return null;
 	}
 	
-	public ResponseAuthen requestLogin(String email, String password) {
+	public ResponseAuthen requestLogin(String email, String password) throws NoSuchAlgorithmException, IOException {
 		HttpRequestPost post = new HttpRequestPost();
-		String url = "http://i-ming.com/20140306.imingjob/json/authen/test6.php";
+		String url = "http://i-ming.com/20140306.imingjob/json/authen/user.php";
 //		String url = "http://arming/buildthedot/27.farmseller/buildthedot-28-armingjob/source/armingjob_server/json/authen/test6.php";
 		
 		HttpParameter mHttpParameter = new HttpParameter();
 		
-//		password = md5(sha1(password)).sha1(md5(password));
-//		byte[] bytesOfMessage;
-//		bytesOfMessage = password.getBytes("UTF-8");
-//		MessageDigest md = null;
-//		md = MessageDigest.getInstance("MD5");
-//		byte[] convertPassword = md.digest(bytesOfMessage);
-		
+		computeSecurity mConvert = new computeSecurity();
 		mHttpParameter.setParam("email", email);
+		
+//		String convertPassword = mConvert.convertToMd5(mConvert.convertToSha1(password))+mConvert.convertToSha1(mConvert.convertToMd5(password));
 		mHttpParameter.setParam("password", password);
-//		mHttpParameter.setParam("password", convertPassword.toString());
+//		mHttpParameter.setParam("password", convertPassword);
 		
 		String responseText = post.httpQuery(url, mHttpParameter);
 		
