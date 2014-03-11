@@ -47,7 +47,6 @@
 
 	$data = array(
 		"email" => $email ,
-		"password" => $EncryptPassword,
 		"message" => $message 
 	);
 	

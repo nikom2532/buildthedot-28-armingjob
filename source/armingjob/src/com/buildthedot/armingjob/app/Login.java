@@ -98,7 +98,13 @@ public class Login extends Activity implements OnClickListener {
 			if(result.message.toString().equals("Authened")){
 				
 			}
-			else if(result.message.toString().equals("Authened")){
+			else if(result.message.toString().equals("wrongPassword")){
+				
+			}
+			else if(result.message.toString().equals("wrongUser")){
+				
+			}
+			else if(result.message.toString().equals("notAuthened")){
 				
 			}
 		}
