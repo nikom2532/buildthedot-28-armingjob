@@ -95,28 +95,15 @@ public class ConnectApi {
 		HttpParameter mHttpParameter = new HttpParameter();
 		
 //		password = md5(sha1(password)).sha1(md5(password));
-		byte[] bytesOfMessage;
-		try {
-			bytesOfMessage = password.getBytes("UTF-8");
-		} catch (UnsupportedEncodingException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-
-		MessageDigest md = null;
-		try {
-			md = MessageDigest.getInstance("MD5");
-		} catch (NoSuchAlgorithmException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		byte[] thedigest = md.digest(bytesOfMessage);
-		
-		
-		
+//		byte[] bytesOfMessage;
+//		bytesOfMessage = password.getBytes("UTF-8");
+//		MessageDigest md = null;
+//		md = MessageDigest.getInstance("MD5");
+//		byte[] convertPassword = md.digest(bytesOfMessage);
 		
 		mHttpParameter.setParam("email", email);
 		mHttpParameter.setParam("password", password);
+//		mHttpParameter.setParam("password", convertPassword.toString());
 		
 		String responseText = post.httpQuery(url, mHttpParameter);
 		
