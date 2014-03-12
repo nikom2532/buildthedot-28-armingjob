@@ -8,5 +8,7 @@
     <string name="armingjob_mainmenu_register">Register</string>
     
     <string name="armingjob_findjob_titlejob">Job Title</string>
+    <string name="armingjob_findjob_companyname">Company Name</string>
+    <string name="armingjob_findjob_address">Address</string>
 	
 </resources>

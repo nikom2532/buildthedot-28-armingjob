@@ -8,6 +8,7 @@ import android.view.View.OnClickListener;
 import com.buildthedot.armingjob.R;
 
 public class Findjob extends Activity implements OnClickListener{
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -15,6 +16,7 @@ public class Findjob extends Activity implements OnClickListener{
 		setView();
 	}
 	void setView(){
+		
 	}
 	@Override
 	public void onClick(View arg0) {

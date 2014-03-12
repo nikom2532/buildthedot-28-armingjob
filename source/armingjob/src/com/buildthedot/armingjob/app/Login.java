@@ -19,6 +19,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.app.Activity;
+import android.content.Intent;
 
 public class Login extends Activity implements OnClickListener {
 	
@@ -96,7 +97,9 @@ public class Login extends Activity implements OnClickListener {
 			Log.v("result.password", result.message.toString());
 			
 			if(result.message.toString().equals("Authened")){
-				
+				Intent i = new Intent(Login.this, Findjob.class);
+				startActivity(i);
+				finish();
 			}
 			else if(result.message.toString().equals("wrongPassword")){
 				
