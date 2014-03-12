@@ -1,57 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
-    
-	<LinearLayout
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="81dp"
         android:orientation="vertical" >
-        
-	    <ImageView
-	        android:layout_width="fill_parent"
-	        android:layout_height="fill_parent"
-	        android:scaleType="centerCrop"
-	        android:src="@drawable/i_ming" />
-        
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/i_ming" />
     </LinearLayout>
-    
+
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout1"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:orientation="vertical" >
-        
-        <LinearLayout
-	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:layout_centerHorizontal="true"
-	        android:orientation="vertical" >
+        android:orientation="horizontal" >
 
-            <Button
-                android:id="@+id/armingjob_mainmenu_login"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/armingjob_mainmenu_login" />
-            
-            <Button
-                android:id="@+id/armingjob_mainmenu_register"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/armingjob_mainmenu_register" />
-            
-	    </LinearLayout>
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/armingjob_findjob_titlejob" />
         
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
     </LinearLayout>
+
 </RelativeLayout>
