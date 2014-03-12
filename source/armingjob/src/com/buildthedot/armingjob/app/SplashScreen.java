@@ -26,7 +26,8 @@ public class SplashScreen extends Activity {
 
 			@Override
 			public void run() {
-				Intent i = new Intent(SplashScreen.this, HomePage.class);
+//				Intent i = new Intent(SplashScreen.this, HomePage.class);
+				Intent i = new Intent(SplashScreen.this, FindJob.class);
 				startActivity(i);
 				finish();
 			}

@@ -14,7 +14,6 @@
         android:id="@+id/armingjob_findjob_LinearLayout_titlejob"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/topbar"
         android:layout_centerHorizontal="true"
         android:orientation="horizontal" >
 

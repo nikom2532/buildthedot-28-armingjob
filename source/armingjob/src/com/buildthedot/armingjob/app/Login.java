@@ -97,7 +97,7 @@ public class Login extends Activity implements OnClickListener {
 			Log.v("result.password", result.message.toString());
 			
 			if(result.message.toString().equals("Authened")){
-				Intent i = new Intent(Login.this, Findjob.class);
+				Intent i = new Intent(Login.this, FindJob.class);
 				startActivity(i);
 				finish();
 			}
