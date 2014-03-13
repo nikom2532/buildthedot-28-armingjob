@@ -26,8 +26,9 @@ import com.buildthedot.armingjob.function.FindjobListAdapter;
 public class FindJob extends Activity  {
 	
 	public class codeLeanChapter {
-		String chapterName;
-		String chapterDescription;
+		String titlejob;
+		String companyName;
+		String address;
 	}
 	CodeLearnAdapter chapterListAdapter;
 	
@@ -51,7 +52,7 @@ public class FindJob extends Activity  {
 				
 				codeLeanChapter chapter = chapterListAdapter.getCodeLearnChapter(arg2);
 				
-				Toast.makeText(FindJob.this, chapter.chapterName,Toast.LENGTH_LONG).show();
+				Toast.makeText(FindJob.this, chapter.titlejob,Toast.LENGTH_LONG).show();
 				
 			}
 		});
@@ -87,13 +88,15 @@ public class FindJob extends Activity  {
 				arg1 = inflater.inflate(R.layout.findjoblist, arg2,false);
 			}
 			
-			TextView chapterName = (TextView)arg1.findViewById(R.id.armingjob_findjob_title_titlejob);
-			TextView chapterDesc = (TextView)arg1.findViewById(R.id.armingjob_findjob_value_titlejob);
+			TextView titlejob = (TextView)arg1.findViewById(R.id.armingjob_findjob_value_titlejob);
+			TextView companyName = (TextView)arg1.findViewById(R.id.armingjob_findjob_value_companyName);
+			TextView address = (TextView)arg1.findViewById(R.id.armingjob_findjob_value_address);
 			
 			codeLeanChapter chapter = codeLeanChapterList.get(arg0);
 			
-			chapterName.setText(chapter.chapterName);
-			chapterDesc.setText(chapter.chapterDescription);
+			titlejob.setText(chapter.titlejob);
+			companyName.setText(chapter.companyName);
+			address.setText(chapter.address);
 			
 			return arg1;
 		}
@@ -105,6 +108,8 @@ public class FindJob extends Activity  {
 
     }
 	
+	//#################################
+	//Add list of job in this List
 	public List<codeLeanChapter> getDataForListView()
     {
     	List<codeLeanChapter> codeLeanChaptersList = new ArrayList<codeLeanChapter>();
@@ -113,8 +118,9 @@ public class FindJob extends Activity  {
     	{
     		
     		codeLeanChapter chapter = new codeLeanChapter();
-    		chapter.chapterName = "Chapter "+i;
-    		chapter.chapterDescription = "This is description for chapter "+i;
+    		chapter.titlejob = "Chapter "+i;
+    		chapter.companyName = "This is chapter "+i;
+    		chapter.address = "This is address "+i;
     		codeLeanChaptersList.add(chapter);
     	}
     	
