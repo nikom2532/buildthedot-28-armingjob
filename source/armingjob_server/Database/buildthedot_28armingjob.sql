@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 13, 2014 at 11:05 AM
+-- Generation Time: Mar 13, 2014 at 12:45 PM
 -- Server version: 5.5.35-0ubuntu0.13.10.2
 -- PHP Version: 5.5.3-1ubuntu2.2
 
@@ -71,6 +71,18 @@ CREATE TABLE IF NOT EXISTS `buildthedot_armingjob_job` (
 INSERT INTO `buildthedot_armingjob_job` (`id`, `company_id`, `position_thai`, `position_eng`, `salary`, `job_description`, `date_start`, `date_end`, `job_type`) VALUES
 (1, 'Whiteboard.Co.,Ltd.', 'Marketing / Business Development', 'Marketing / Business Development', '3x,xxx ', 'Whiteboard is a small company that provided creative business IT solutions to our customers. We are expanding our business scope to both IT and Non-IT related business.\r\n \r\nJob Description : Establish relationships with customers B2B, or B2C. / Calling, or visiting clients on a regular basis, promoting features and benefits of the company products and services./ Develop new potential markets. /Develop and implement marketing plan. /Analyze the strengths and weaknesses of competitors, and monitor new trends. \r\n', '2013-11-22', '2014-12-22', 1),
 (2, 'aaaa', 'aaaaaaa', 'aaaaaaaaaaa', '10000', 'aaaaaa', '2014-01-08', '2014-01-17', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `buildthedot_armingjob_job_group`
+--
+
+CREATE TABLE IF NOT EXISTS `buildthedot_armingjob_job_group` (
+  `id` int(200) NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -153,6 +165,19 @@ INSERT INTO `buildthedot_armingjob_user_account_reference_contacts` (`user_accou
 (1, 2, '', '', '', '', 'งงจุง'),
 (2, 3, 'นายกิติภูมิ คีรีวรรณ', 'บิดา', 'กรมศุลกากร', 'นักวิชาการระดับสูง', '0814855139'),
 (3, 4, '', '', '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `buildthedot_armingjob_user_company`
+--
+
+CREATE TABLE IF NOT EXISTS `buildthedot_armingjob_user_company` (
+  `id` int(200) NOT NULL AUTO_INCREMENT,
+  `user_id` int(200) NOT NULL,
+  `company_id` int(200) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
