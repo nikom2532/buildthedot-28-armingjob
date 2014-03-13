@@ -6,9 +6,11 @@ import org.json.JSONObject;
 import android.content.Context;
 import android.util.Log;
 
+import com.buildthedot.armingjob.app.FindJob;
 import com.buildthedot.armingjob.function.computeSecurity;
 import com.buildthedot.armingjob.function.writeLog;
 import com.buildthedot.armingjob.response.ResponseAuthen;
+import com.buildthedot.armingjob.response.ResponseFindJobDefault;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -112,4 +114,15 @@ public class ConnectApi {
 		return null;
 	}
 	
+	public ResponseFindJobDefault requestFindJobDefault(){
+		HttpRequestPost post = new HttpRequestPost();
+		String url = "http://i-ming.com/20140306.imingjob/json/authen/user.php";
+		HttpParameter mHttpParameter = new HttpParameter();
+		String responseText = post.httpQuery(url, mHttpParameter);
+		if (responseText != null && !responseText.equals("")) {
+			ResponseFindJobDefault rs = new Gson().fromJson(responseText, ResponseFindJobDefault.class);
+			return rs;
+		}
+		return null;
+	}
 }
