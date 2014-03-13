@@ -22,6 +22,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import com.buildthedot.armingjob.function.FindjobListAdapter;
+import com.buildthedot.armingjob.response.ResponseAuthen;
+import com.buildthedot.armingjob.response.ResponseFindJobDefault;
+import com.buildthedot.armingjob.service.ConnectApi;
 
 public class FindJob extends Activity  {
 	
@@ -114,9 +117,12 @@ public class FindJob extends Activity  {
     {
     	List<codeLeanChapter> codeLeanChaptersList = new ArrayList<codeLeanChapter>();
     	
+    	ResponseFindJobDefault responseFindJob = null;
+    	ConnectApi connApi = new ConnectApi(FindJob.this);
+    	responseFindJob = connApi.requestFindJobDefault();
+    	
     	for(int i=0;i<10;i++)
     	{
-    		
     		codeLeanChapter chapter = new codeLeanChapter();
     		chapter.titlejob = "Chapter "+i;
     		chapter.companyName = "This is chapter "+i;
