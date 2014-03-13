@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 10, 2014 at 10:56 AM
+-- Generation Time: Mar 13, 2014 at 11:05 AM
 -- Server version: 5.5.35-0ubuntu0.13.10.2
 -- PHP Version: 5.5.3-1ubuntu2.2
 
@@ -23,78 +23,54 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `buildthedot_armingjob_company`
+--
+
+CREATE TABLE IF NOT EXISTS `buildthedot_armingjob_company` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `company_name` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
+  `website` text COLLATE utf8_unicode_ci NOT NULL,
+  `company_pic` varchar(200) COLLATE utf8_unicode_ci NOT NULL COMMENT 'file',
+  `short_address` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `full_address` varchar(225) COLLATE utf8_unicode_ci NOT NULL,
+  `time` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `TopCompanyName` (`company_name`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `buildthedot_armingjob_company`
+--
+
+INSERT INTO `buildthedot_armingjob_company` (`id`, `company_name`, `website`, `company_pic`, `short_address`, `full_address`, `time`) VALUES
+(1, 'JASPAL', 'http://www.jaspal.com/', '', '', '', '2014-01-23 02:45:23');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `buildthedot_armingjob_job`
 --
 
 CREATE TABLE IF NOT EXISTS `buildthedot_armingjob_job` (
-  `JobID` int(11) NOT NULL AUTO_INCREMENT,
-  `CompanyName` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
-  `PositionThai` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
-  `PositionEng` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
-  `Place` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
-  `Quantity` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `property` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
-  `Saraly` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `JobDescription` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
-  `Recomment` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `company_id` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
+  `position_thai` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
+  `position_eng` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
+  `salary` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `job_description` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
   `date_start` date NOT NULL,
   `date_end` date NOT NULL,
-  `JobType` int(11) NOT NULL,
-  PRIMARY KEY (`JobID`)
+  `job_type` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `buildthedot_armingjob_job`
 --
 
-INSERT INTO `buildthedot_armingjob_job` (`JobID`, `CompanyName`, `PositionThai`, `PositionEng`, `Place`, `Quantity`, `property`, `Saraly`, `JobDescription`, `Recomment`, `date_start`, `date_end`, `JobType`) VALUES
-(1, 'Whiteboard.Co.,Ltd.', 'Marketing / Business Development', 'Marketing / Business Development', '888/41-44, 3rd floor of building behind Mahatun Plaza, Ploenchit Rd., Lumpini, Pathumwan, Bangkok 10330\r\n\r\n(ใกล้สถานีรถไฟฟ้าเพลินจิต)', '1', 'Experience in marketing/business development is advantage. But no experience is welcome/Good interpersonal and communication skills.  Strong presentation skills.', '3x,xxx ', 'Whiteboard is a small company that provided creative business IT solutions to our customers. We are expanding our business scope to both IT and Non-IT related business.\r\n \r\nJob Description : Establish relationships with customers B2B, or B2C. / Calling, or visiting clients on a regular basis, promoting features and benefits of the company products and services./ Develop new potential markets. /Develop and implement marketing plan. /Analyze the strengths and weaknesses of competitors, and monitor new trends. \r\n', 1, '2013-11-22', '2014-12-22', 1),
-(2, 'aaaa', 'aaaaaaa', 'aaaaaaaaaaa', 'aaaaaaaaaaaa', '2', 'aaaaaaaa', '10000', 'aaaaaa', 1, '2014-01-08', '2014-01-17', 2);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `buildthedot_armingjob_job_attribute`
---
-
-CREATE TABLE IF NOT EXISTS `buildthedot_armingjob_job_attribute` (
-  `AttributeID` int(11) NOT NULL AUTO_INCREMENT,
-  `JobID` int(11) NOT NULL,
-  `AtrributDescription` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`AttributeID`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `buildthedot_armingjob_job_attribute`
---
-
-INSERT INTO `buildthedot_armingjob_job_attribute` (`AttributeID`, `JobID`, `AtrributDescription`) VALUES
-(1, 1, 'Bachelor degree or higher');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `buildthedot_armingjob_top_company`
---
-
-CREATE TABLE IF NOT EXISTS `buildthedot_armingjob_top_company` (
-  `TopCompanyID` int(11) NOT NULL AUTO_INCREMENT,
-  `TopCompanyName` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
-  `LinkAddress` text COLLATE utf8_unicode_ci NOT NULL,
-  `CompanyPic` varchar(200) COLLATE utf8_unicode_ci NOT NULL COMMENT 'file',
-  `Time` datetime NOT NULL,
-  `Status` int(11) NOT NULL,
-  `TopCompanyRecomment` int(11) NOT NULL,
-  PRIMARY KEY (`TopCompanyID`),
-  UNIQUE KEY `TopCompanyName` (`TopCompanyName`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
-
---
--- Dumping data for table `buildthedot_armingjob_top_company`
---
-
-INSERT INTO `buildthedot_armingjob_top_company` (`TopCompanyID`, `TopCompanyName`, `LinkAddress`, `CompanyPic`, `Time`, `Status`, `TopCompanyRecomment`) VALUES
-(1, 'JASPAL', 'http://www.jaspal.com/', '', '2014-01-23 02:45:23', 1, 0);
+INSERT INTO `buildthedot_armingjob_job` (`id`, `company_id`, `position_thai`, `position_eng`, `salary`, `job_description`, `date_start`, `date_end`, `job_type`) VALUES
+(1, 'Whiteboard.Co.,Ltd.', 'Marketing / Business Development', 'Marketing / Business Development', '3x,xxx ', 'Whiteboard is a small company that provided creative business IT solutions to our customers. We are expanding our business scope to both IT and Non-IT related business.\r\n \r\nJob Description : Establish relationships with customers B2B, or B2C. / Calling, or visiting clients on a regular basis, promoting features and benefits of the company products and services./ Develop new potential markets. /Develop and implement marketing plan. /Analyze the strengths and weaknesses of competitors, and monitor new trends. \r\n', '2013-11-22', '2014-12-22', 1),
+(2, 'aaaa', 'aaaaaaa', 'aaaaaaaaaaa', '10000', 'aaaaaa', '2014-01-08', '2014-01-17', 2);
 
 -- --------------------------------------------------------
 
