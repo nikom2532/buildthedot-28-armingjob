@@ -110,10 +110,10 @@ public class Login extends Activity implements OnClickListener {
 				popup.show("", "wrongPassword");
 			}
 			else if(result.message.toString().equals("wrongUser")){
-				
+				popup.show("", "wrongUser");
 			}
 			else if(result.message.toString().equals("notAuthened")){
-				
+				popup.show("", "notAuthened");
 			}
 		}
 	}

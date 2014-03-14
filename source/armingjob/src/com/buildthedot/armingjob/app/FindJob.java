@@ -36,11 +36,19 @@ public class FindJob extends Activity  {
 	SharedPref2 pref = new SharedPref2(FindJob.this);
 	ArrayList<String> DB_job_jobID = new ArrayList<String>();
 	ArrayList<String> DB_job_CompanyID = new ArrayList<String>();
+	ArrayList<String> DB_job_position_thai = new ArrayList<String>();
+	ArrayList<String> DB_job_position_eng = new ArrayList<String>();
+	ArrayList<String> DB_job_salary = new ArrayList<String>();
+	ArrayList<String> DB_job_job_description = new ArrayList<String>();
+	ArrayList<String> DB_job_date_start = new ArrayList<String>();
+	ArrayList<String> DB_job_date_end = new ArrayList<String>();
+	ArrayList<String> DB_job_job_type = new ArrayList<String>();
 	
 	public class codeLeanChapter {
 		String titlejob;
 		String companyName;
 		String address;
+		String date_start;
 	}
 	CodeLearnAdapter chapterListAdapter;
 	
@@ -104,12 +112,14 @@ public class FindJob extends Activity  {
 			TextView titlejob = (TextView)arg1.findViewById(R.id.armingjob_findjob_value_titlejob);
 			TextView companyName = (TextView)arg1.findViewById(R.id.armingjob_findjob_value_companyName);
 			TextView address = (TextView)arg1.findViewById(R.id.armingjob_findjob_value_address);
+			TextView date_start = (TextView)arg1.findViewById(R.id.armingjob_findjob_value_time);
 			
 			codeLeanChapter chapter = codeLeanChapterList.get(arg0);
 			
 			titlejob.setText(chapter.titlejob);
 			companyName.setText(chapter.companyName);
 			address.setText(chapter.address);
+			date_start.setText(chapter.date_start);
 			
 			return arg1;
 		}
@@ -150,6 +160,7 @@ public class FindJob extends Activity  {
 			for(int i=0; i<result.data.size(); i++){
 				DB_job_jobID.add(result.data.get(i).jobID);
 				DB_job_CompanyID.add(result.data.get(i).CompanyID);
+				DB_job_date_start.add(result.data.get(i).date_start);
 			}
 			
 //			Log.v("result.data.size()", String.valueOf(result.data.size()));
@@ -172,9 +183,10 @@ public class FindJob extends Activity  {
     	
     	for(int i=0; i<DB_job_jobID.size(); i++) {
     		codeLeanChapter chapter = new codeLeanChapter();
-    		chapter.titlejob = "Chapter "+ DB_job_jobID.get(i);
-    		chapter.companyName = "This is chapter "+ DB_job_CompanyID.get(i);
-    		chapter.address = "This is address "+i;
+    		chapter.titlejob = DB_job_jobID.get(i);
+    		chapter.companyName = DB_job_CompanyID.get(i);
+    		chapter.address = "" + i;
+    		chapter.date_start = DB_job_date_start.get(i);
     		codeLeanChaptersList.add(chapter);
     	}
     	return codeLeanChaptersList;
