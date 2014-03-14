@@ -123,6 +123,8 @@ public class ConnectApi {
 			ResponseFindJobDefault rs = new Gson().fromJson(responseText, ResponseFindJobDefault.class);
 			return rs;
 		}
-		return null;
+		else{
+			return null;
+		}
 	}
 }
