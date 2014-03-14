@@ -13,32 +13,39 @@
 	
 	//##############################################################################
 	
+	$response = array();
+	
 	$sql_user = "
 		SELECT * 
 		FROM  `buildthedot_armingjob_job` ;
 	";
 	$result_user = @mysql_query($sql_user);
-	if($rs_user = @mysql_fetch_array($result_user)) {
-		
+	
+	// check for empty result
+	if (mysql_num_rows($result) > 0) {
+	    $response["data"] = array();
+	
+		while($row = @mysql_fetch_array($result_user)) {
+			
+	        // temp user array
+	        $data = array();
+	        $data["id"] = $row["id"];
+	        $data["company_id"] = $row["company_id"];
+	
+	        // push single product into final response array
+	        array_push($response["data"], $data);
+	    }
+	    // success
+	    //$response["success"] = 1;
+	
+	    // echoing JSON response
+	    echo json_encode($response);
+	} else {
+	    // no data found
+	    //$response["success"] = 0;
+	    //$response["message"] = "No data found";
+	
+	    // echo no users JSON
+	    echo json_encode($response);
 	}
-	else{
-		$message = "wrongUser";
-	}
-	
-	
-	// Here's some data that we want to send via JSON.
-	// We'll include the $id parameter so that we
-	// can show that it has been passed in correctly.
-	// You can send whatever data you like.
-
-	
-
-	$data = array(
-		"email" => $email ,
-		"message" => $message 
-	);
-	
-	// Send the data.
-	echo json_encode($data);
-	//print_r($data);
 ?>
