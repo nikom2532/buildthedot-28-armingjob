@@ -37,7 +37,15 @@
 	        $data = array();
 	        $data["jobID"] = $row["id"];
 	        $data["CompanyID"] = $row["company_id"];
-	
+			
+			$data["position_thai"] = $row["position_thai"];
+			$data["position_eng"] = $row["position_eng"];
+			$data["salary"] = $row["salary"];
+			$data["job_description"] = $row["job_description"];
+			$data["date_start"] = $row["date_start"];
+			$data["date_end"] = $row["date_end"];
+			$data["job_type"] = $row["job_type"];
+			
 	        // push single product into final response array
 	        array_push($response["data"], $data);
 	    }
