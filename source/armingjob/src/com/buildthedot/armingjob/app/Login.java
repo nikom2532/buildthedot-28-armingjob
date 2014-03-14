@@ -5,6 +5,7 @@ import java.security.NoSuchAlgorithmException;
 
 import com.buildthedot.armingjob.R;
 import com.buildthedot.armingjob.function.DialogProcess;
+import com.buildthedot.armingjob.function.PopupDialog;
 import com.buildthedot.armingjob.request.RequestAuthen;
 import com.buildthedot.armingjob.response.ResponseAuthen;
 import com.buildthedot.armingjob.service.ConnectApi;
@@ -13,6 +14,7 @@ import com.google.gson.Gson;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -26,6 +28,7 @@ public class Login extends Activity implements OnClickListener {
 	EditText armingjob_mainmenu_email;
 	EditText armingjob_mainmenu_password;
 	Button armingjob_mainmenu_login;
+	PopupDialog popup = new PopupDialog(Login.this);
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +41,11 @@ public class Login extends Activity implements OnClickListener {
 		armingjob_mainmenu_password = (EditText) findViewById(R.id.armingjob_mainmenu_password);
 		armingjob_mainmenu_login = (Button) findViewById(R.id.armingjob_mainmenu_login);
 		armingjob_mainmenu_login.setOnClickListener(this);
-		armingjob_mainmenu_email.setText("nikom2532@gmail.com");
+//		armingjob_mainmenu_email.setText("nikom2532@gmail.com");
 //		armingjob_mainmenu_password.setText("77de54ccf56eb6f7dbf99e4d3be949ab6f9b0a55df8ac28564cb9f63a10be8af6ab3f7c2");
+		armingjob_mainmenu_email.setText("a@a.com");
 		armingjob_mainmenu_password.setText("a");
+		armingjob_mainmenu_password.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
 	}
 	
 	@Override
@@ -102,7 +107,7 @@ public class Login extends Activity implements OnClickListener {
 				finish();
 			}
 			else if(result.message.toString().equals("wrongPassword")){
-				
+				popup.show("", "wrongPassword");
 			}
 			else if(result.message.toString().equals("wrongUser")){
 				
