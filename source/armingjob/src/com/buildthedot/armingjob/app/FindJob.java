@@ -1,6 +1,7 @@
 package com.buildthedot.armingjob.app;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import com.buildthedot.armingjob.R;
@@ -28,8 +29,13 @@ import com.buildthedot.armingjob.function.FindjobListAdapter;
 import com.buildthedot.armingjob.response.ResponseAuthen;
 import com.buildthedot.armingjob.response.ResponseFindJobDefault;
 import com.buildthedot.armingjob.service.ConnectApi;
+import com.buildthedot.armingjob.service.SharedPref2;
 
 public class FindJob extends Activity  {
+	
+	SharedPref2 pref = new SharedPref2(FindJob.this);
+	ArrayList<String> DB_job_jobID = new ArrayList<String>();
+	ArrayList<String> DB_job_CompanyID = new ArrayList<String>();
 	
 	public class codeLeanChapter {
 		String titlejob;
@@ -42,8 +48,8 @@ public class FindJob extends Activity  {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.findjob);
-		setView();
 		new getFindJob().execute();
+//		setView();
 	}
 	void setView(){
 		chapterListAdapter = new CodeLearnAdapter();
@@ -139,7 +145,18 @@ public class FindJob extends Activity  {
 		protected void onPostExecute(ResponseFindJobDefault result) {
 			super.onPostExecute(result);
 			dialog.dismiss();
-			Log.v("response", result.data.toString());
+//			Log.v("response", result.data.get(0).jobID);
+			
+			for(int i=0; i<result.data.size(); i++){
+				DB_job_jobID.add(result.data.get(i).jobID);
+				DB_job_CompanyID.add(result.data.get(i).CompanyID);
+			}
+			
+//			Log.v("result.data.size()", String.valueOf(result.data.size()));
+			
+//			pref.setString("DB_job_id", result.data.get(0).CompanyID);
+//			Log.v("constant_test", pref.getString("DB_job_id"));
+			setView();
 		}
 		
 	}
@@ -150,12 +167,13 @@ public class FindJob extends Activity  {
     {
     	List<codeLeanChapter> codeLeanChaptersList = new ArrayList<codeLeanChapter>();
     	
+//    	ResponseFindJobDefault result = new ResponseFindJobDefault();
+//    	Log.v("response", result.data.get(0).jobID);
     	
-    	for(int i=0;i<10;i++)
-    	{
+    	for(int i=0; i<DB_job_jobID.size(); i++) {
     		codeLeanChapter chapter = new codeLeanChapter();
-    		chapter.titlejob = "Chapter "+i;
-    		chapter.companyName = "This is chapter "+i;
+    		chapter.titlejob = "Chapter "+ DB_job_jobID.get(i);
+    		chapter.companyName = "This is chapter "+ DB_job_CompanyID.get(i);
     		chapter.address = "This is address "+i;
     		codeLeanChaptersList.add(chapter);
     	}
