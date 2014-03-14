@@ -1,8 +1,14 @@
 package com.buildthedot.armingjob.response;
 
+import java.util.ArrayList;
+
+import com.buildthedot.armingjob.model.FindJobDefault;
+
 public class ResponseFindJobDefault {
-	public String jobID = "";
-	public String CompanyID = "";
-	public String position_thai = "";
-	public String salary = "";
+	
+	public ArrayList<FindJobDefault> data;
+	
+	public ResponseFindJobDefault() {
+		data = new ArrayList<FindJobDefault>();
+	}
 }

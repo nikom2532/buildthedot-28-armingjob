@@ -116,7 +116,7 @@ public class ConnectApi {
 	
 	public ResponseFindJobDefault requestFindJobDefault(){
 		HttpRequestPost post = new HttpRequestPost();
-		String url = "http://i-ming.com/20140306.imingjob/json/authen/user.php";
+		String url = "http://i-ming.com/20140306.imingjob/json/content/findjob.php";
 		HttpParameter mHttpParameter = new HttpParameter();
 		String responseText = post.httpQuery(url, mHttpParameter);
 		if (responseText != null && !responseText.equals("")) {

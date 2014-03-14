@@ -35,8 +35,8 @@
 			
 	        // temp user array
 	        $data = array();
-	        $data["id"] = $row["id"];
-	        $data["company_id"] = $row["company_id"];
+	        $data["jobID"] = $row["id"];
+	        $data["CompanyID"] = $row["company_id"];
 	
 	        // push single product into final response array
 	        array_push($response["data"], $data);

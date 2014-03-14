@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.buildthedot.armingjob.R;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -21,6 +22,8 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+
+import com.buildthedot.armingjob.function.DialogProcess;
 import com.buildthedot.armingjob.function.FindjobListAdapter;
 import com.buildthedot.armingjob.response.ResponseAuthen;
 import com.buildthedot.armingjob.response.ResponseFindJobDefault;
@@ -40,6 +43,7 @@ public class FindJob extends Activity  {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.findjob);
 		setView();
+		new getFindJob().execute();
 	}
 	void setView(){
 		chapterListAdapter = new CodeLearnAdapter();
@@ -111,15 +115,41 @@ public class FindJob extends Activity  {
 
     }
 	
+	//############# Class 
+	private class getFindJob extends AsyncTask<String, Void, ResponseFindJobDefault>{
+
+		DialogProcess dialog = new DialogProcess(FindJob.this);
+		ConnectApi connApi = new ConnectApi(FindJob.this);
+		
+		@Override
+		protected void onPreExecute() {
+			super.onPreExecute();
+			dialog.show();
+		}
+		
+		@Override
+		protected ResponseFindJobDefault doInBackground(String... params) {
+			// TODO Auto-generated method stub
+			
+	    	ResponseFindJobDefault responseFindJob = connApi.requestFindJobDefault();
+			return responseFindJob;
+		}
+		
+		@Override
+		protected void onPostExecute(ResponseFindJobDefault result) {
+			super.onPostExecute(result);
+			dialog.dismiss();
+			Log.v("response", result.data.toString());
+		}
+		
+	}
+	
 	//#################################
 	//Add list of job in this List
 	public List<codeLeanChapter> getDataForListView()
     {
     	List<codeLeanChapter> codeLeanChaptersList = new ArrayList<codeLeanChapter>();
     	
-    	ResponseFindJobDefault responseFindJob = null;
-    	ConnectApi connApi = new ConnectApi(FindJob.this);
-    	responseFindJob = connApi.requestFindJobDefault();
     	
     	for(int i=0;i<10;i++)
     	{
@@ -129,8 +159,6 @@ public class FindJob extends Activity  {
     		chapter.address = "This is address "+i;
     		codeLeanChaptersList.add(chapter);
     	}
-    	
     	return codeLeanChaptersList;
-    	
     }
 }
