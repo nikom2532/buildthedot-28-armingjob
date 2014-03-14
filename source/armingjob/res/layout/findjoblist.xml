@@ -104,7 +104,7 @@
         android:id="@+id/armingjob_findjob_LinearLayout_time"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/armingjob_findjob_LinearLayout_time"
+        android:layout_below="@+id/armingjob_findjob_LinearLayout_address"
         android:layout_centerHorizontal="true"
         android:orientation="horizontal" >
 

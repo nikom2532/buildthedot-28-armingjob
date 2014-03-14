@@ -42,9 +42,12 @@
 			$data["position_eng"] = $row["position_eng"];
 			$data["salary"] = $row["salary"];
 			$data["job_description"] = $row["job_description"];
-			$data["date_start"] = $row["date_start"];
-			$data["date_end"] = $row["date_end"];
 			$data["job_type"] = $row["job_type"];
+			
+			
+			
+			$data["date_start"] = strtotime($row["date_start"]);
+			$data["date_end"] = strtotime($row["date_end"]);
 			
 	        // push single product into final response array
 	        array_push($response["data"], $data);
