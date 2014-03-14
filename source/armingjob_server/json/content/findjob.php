@@ -8,6 +8,12 @@
 	
 	// $rootpath="../../";
 	// include($rootpath."config/header.php");
+	
+	//############ Local
+	// $cn = @mysql_connect("localhost","iming","iming");
+	// @mysql_select_db("buildthedot_28armingjob",$cn);
+	
+	//############ Global
 	$cn = @mysql_connect("localhost","imingcom_arming","cominter");
 	@mysql_select_db("imingcom_DB",$cn);
 	
@@ -22,7 +28,7 @@
 	$result_user = @mysql_query($sql_user);
 	
 	// check for empty result
-	if (mysql_num_rows($result) > 0) {
+	if (@mysql_num_rows($result_user) > 0) {
 	    $response["data"] = array();
 	
 		while($row = @mysql_fetch_array($result_user)) {
