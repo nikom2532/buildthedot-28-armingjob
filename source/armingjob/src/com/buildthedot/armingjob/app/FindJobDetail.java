@@ -48,7 +48,7 @@ public class FindJobDetail extends Activity  {
 	}
 	
 	public void setView(){
-		
+		new getFindJob().execute();
 	}
 	
 	//############# Class 
@@ -80,6 +80,10 @@ public class FindJobDetail extends Activity  {
 		protected void onPostExecute(ResponseFindJobDetail result) {
 			super.onPostExecute(result);
 			dialog.dismiss();
+			
+			
+			
+			 
 		}
 		
 	}
