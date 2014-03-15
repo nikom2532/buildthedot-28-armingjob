@@ -92,13 +92,11 @@ public class FindJob extends Activity  {
 				DB_job_date_start.set(i, String.valueOf(Integer.parseInt(DB_job_date_start.get(i)) + 1000));
 				date_start2.setText(String.valueOf(DB_job_date_start.get(i)));
 			}
-			Log.v("test", "test");
+//			Log.v("test", chapterListAdapter.);
 		}
 	};
 	
 	public void setView(){
-		
-		date_start2 = (TextView)findViewById(R.id.armingjob_findjob_value_time);
 		
 		chapterListAdapter = new CodeLearnAdapter();
         
@@ -118,6 +116,14 @@ public class FindJob extends Activity  {
 			}
 		});
 	}
+	
+	//#################################
+	
+	public class FindJobDetail{
+		
+	}
+	
+	//#################################
 	
 	public class CodeLearnAdapter extends BaseAdapter {
 
@@ -142,13 +148,10 @@ public class FindJob extends Activity  {
 
 		@Override
 		public View getView(int arg0, View arg1, ViewGroup arg2) {
-			
-			if(arg1==null)
-			{
+			if(arg1==null){
 				LayoutInflater inflater = (LayoutInflater) FindJob.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 				arg1 = inflater.inflate(R.layout.findjoblist, arg2,false);
 			}
-			
 			TextView titlejob = (TextView)arg1.findViewById(R.id.armingjob_findjob_value_titlejob);
 			TextView companyName = (TextView)arg1.findViewById(R.id.armingjob_findjob_value_companyName);
 			TextView address = (TextView)arg1.findViewById(R.id.armingjob_findjob_value_address);
@@ -164,11 +167,10 @@ public class FindJob extends Activity  {
 			return arg1;
 		}
 		
-		public codeLeanChapter getCodeLearnChapter(int position)
-		{
+		public codeLeanChapter getCodeLearnChapter(int position){
 			return codeLeanChapterList.get(position);
 		}
-
+		
     }
 	
 	//############# Class 
@@ -202,7 +204,6 @@ public class FindJob extends Activity  {
 				DB_job_CompanyID.add(result.data.get(i).CompanyID);
 				DB_job_date_start.add(result.data.get(i).date_start);
 			}
-			
 			setView();
 			TextTimer();
 		}
