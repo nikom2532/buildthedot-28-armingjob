@@ -60,10 +60,10 @@ public class FindJob extends Activity  {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.findjob);
 		setView2();
-		new getFindJob().execute();
 	}
 	void setView2(){
 		date_start2 = (TextView)findViewById(R.id.armingjob_findjob_value_time);
+		new getFindJob().execute();
 	}
 	void setView(){
 		
