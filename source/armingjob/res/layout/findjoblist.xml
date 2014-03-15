@@ -52,7 +52,7 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/icon_location" />
+            android:src="@drawable/icon_building" />
         
         <!--
         <TextView
@@ -90,7 +90,7 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/icon_building" />
+            android:src="@drawable/icon_location" />
         
         <TextView
             android:id="@+id/armingjob_findjob_value_address"
