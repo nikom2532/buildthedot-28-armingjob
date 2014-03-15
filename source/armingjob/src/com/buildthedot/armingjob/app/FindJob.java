@@ -3,6 +3,8 @@ package com.buildthedot.armingjob.app;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import com.buildthedot.armingjob.R;
 
@@ -47,6 +49,10 @@ public class FindJob extends Activity  {
 	
 	TextView date_start2;
 	
+	int i=0;
+	TextView tv;
+	final Handler myHandler = new Handler();
+	
 	public class codeLeanChapter {
 		String titlejob;
 		String companyName;
@@ -65,7 +71,32 @@ public class FindJob extends Activity  {
 		date_start2 = (TextView)findViewById(R.id.armingjob_findjob_value_time);
 		new getFindJob().execute();
 	}
-	void setView(){
+	
+	void TextTimer(){
+		Timer myTimer = new Timer();
+		myTimer.schedule(new TimerTask() {
+			@Override
+			public void run() {UpdateGUI();}
+		}, 0, 1000);
+	}
+	
+	void UpdateGUI() {
+		i++;
+		myHandler.post(myRunnable);
+	}
+
+	final Runnable myRunnable = new Runnable() {
+		public void run() {
+			date_start2 = (TextView)findViewById(R.id.armingjob_findjob_value_time);
+			for(int i=0; i<DB_job_date_start.size(); i++){
+				DB_job_date_start.set(i, String.valueOf(Integer.parseInt(DB_job_date_start.get(i)) + 1000));
+				date_start2.setText(String.valueOf(DB_job_date_start.get(i)));
+			}
+			Log.v("test", "test");
+		}
+	};
+	
+	public void setView(){
 		
 		date_start2 = (TextView)findViewById(R.id.armingjob_findjob_value_time);
 		
@@ -173,6 +204,7 @@ public class FindJob extends Activity  {
 			}
 			
 			setView();
+			TextTimer();
 		}
 		
 	}
