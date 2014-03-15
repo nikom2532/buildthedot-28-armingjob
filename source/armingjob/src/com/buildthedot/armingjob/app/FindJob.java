@@ -61,9 +61,6 @@ public class FindJob extends Activity  {
 		setContentView(R.layout.findjob);
 		setView2();
 		new getFindJob().execute();
-//		setView();
-//		setRunable();
-		setRunable2();
 	}
 	void setView2(){
 		date_start2 = (TextView)findViewById(R.id.armingjob_findjob_value_time);
@@ -175,84 +172,11 @@ public class FindJob extends Activity  {
 				DB_job_date_start.add(result.data.get(i).date_start);
 			}
 			
-//			Log.v("result.data.size()", String.valueOf(result.data.size()));
-			
-//			pref.setString("DB_job_id", result.data.get(0).CompanyID);
-//			Log.v("constant_test", pref.getString("DB_job_id"));
 			setView();
 		}
 		
 	}
 	
-	public void setRunable2(){
-//		
-//	  new Thread() {
-//	        public void run() {
-//	            int i = 0;
-//				while(i > 0) {
-//	                try {
-//						Thread.sleep(1000);
-//					} catch (InterruptedException e) {
-//						// TODO Auto-generated catch block
-//						e.printStackTrace();
-//					}
-//	                date_start2.post(new Runnable() {
-//	                    public void run() {
-//	                    	date_start2.setText(Integer.toString(5));
-//	                    	Log.v("5", "5");
-//	                    }
-//	                });
-//	                i--;
-//	            }
-//	        }
-//	    }.start();
-	    Log.v("5", "5");
-		
-//		int i=1;
-//		while(i==1){
-//			setRunable();
-//		}
-	}
-	
-	public void setRunable(){
-//		int i;
-//		for(i=1; i<10; i++){
-//				new Handler().postDelayed(new Runnable() {
-//					@Override
-//					public void run() {
-//						for(int i=0; i<DB_job_date_start.size(); i++){
-//							Log.v("delay_value_0", DB_job_date_start.get(i));
-//							DB_job_date_start.set(i, String.valueOf(Integer.parseInt(DB_job_date_start.get(i)) + 1000));
-//		//					date_start2.setText(DB_job_date_start.get(i));
-//							Log.v("delay_i", String.valueOf(i));
-//							Log.v("delay_value", DB_job_date_start.get(i));
-//						}
-//					}
-//				}, 1000);
-//		}
-//		Log.v("DB_job_date_start", DB_job_date_start.get(0));
-		
-		
-		
-//		Handler handler = new Handler();
-//	    Runnable runnable = new Runnable() {
-//	        public long startTime = System.currentTimeMillis();
-//	        public void run() {
-//                try {
-//                    Thread.sleep(1000);
-//                }    
-//                catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-//                handler.post(new Runnable(){
-//                    public void run() {
-//                       tvTime.setText("" + ((System.currentTimeMillis() - this.startTime) / 1000));
-//                    }
-//	            });
-//	        }
-//	    };
-//	    new Thread(runnable).start();
-	}
 	
 	//#################################
 	//Add list of job in this List
