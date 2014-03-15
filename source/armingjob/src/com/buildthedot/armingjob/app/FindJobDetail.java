@@ -29,8 +29,10 @@ import android.content.Intent;
 
 import com.buildthedot.armingjob.function.DialogProcess;
 import com.buildthedot.armingjob.function.FindjobListAdapter;
+import com.buildthedot.armingjob.request.RequestFindJobDetail;
 import com.buildthedot.armingjob.response.ResponseAuthen;
 import com.buildthedot.armingjob.response.ResponseFindJobDefault;
+import com.buildthedot.armingjob.response.ResponseFindJobDetail;
 import com.buildthedot.armingjob.service.ConnectApi;
 import com.buildthedot.armingjob.service.SharedPref2;
 
@@ -50,10 +52,15 @@ public class FindJobDetail extends Activity  {
 	}
 	
 	//############# Class 
-	private class getFindJob extends AsyncTask<String, Void, ResponseFindJobDefault>{
+	private class getFindJob extends AsyncTask<String, Void, ResponseFindJobDetail>{
 
 		DialogProcess dialog = new DialogProcess(FindJobDetail.this);
 		ConnectApi connApi = new ConnectApi(FindJobDetail.this);
+		RequestFindJobDetail requestFindJobDetail = new RequestFindJobDetail();
+		
+		public getFindJob(){
+			requestFindJobDetail.jobID = pref.getString("DB_job_jobID");
+		}
 		
 		@Override
 		protected void onPreExecute() {
@@ -62,15 +69,15 @@ public class FindJobDetail extends Activity  {
 		}
 		
 		@Override
-		protected ResponseFindJobDefault doInBackground(String... params) {
+		protected ResponseFindJobDetail doInBackground(String... params) {
 			// TODO Auto-generated method stub
 			
-	    	ResponseFindJobDefault responseFindJob = connApi.requestFindJobDefault();
-			return responseFindJob;
+	    	ResponseFindJobDetail responseFindJobDetail = connApi.requestFindJobDetail(requestFindJobDetail.jobID);
+			return responseFindJobDetail;
 		}
 		
 		@Override
-		protected void onPostExecute(ResponseFindJobDefault result) {
+		protected void onPostExecute(ResponseFindJobDetail result) {
 			super.onPostExecute(result);
 			dialog.dismiss();
 		}

@@ -11,6 +11,7 @@ import com.buildthedot.armingjob.function.computeSecurity;
 import com.buildthedot.armingjob.function.writeLog;
 import com.buildthedot.armingjob.response.ResponseAuthen;
 import com.buildthedot.armingjob.response.ResponseFindJobDefault;
+import com.buildthedot.armingjob.response.ResponseFindJobDetail;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -121,6 +122,21 @@ public class ConnectApi {
 		String responseText = post.httpQuery(url, mHttpParameter);
 		if (responseText != null && !responseText.equals("")) {
 			ResponseFindJobDefault rs = new Gson().fromJson(responseText, ResponseFindJobDefault.class);
+			return rs;
+		}
+		else{
+			return null;
+		}
+	}
+	
+	public ResponseFindJobDetail requestFindJobDetail(String jobID){
+		HttpRequestPost post = new HttpRequestPost();
+		String url = "http://i-ming.com/20140306.imingjob/json/content/findjobdetail.php";
+		HttpParameter mHttpParameter = new HttpParameter();
+		mHttpParameter.setParam("jobID", jobID);
+		String responseText = post.httpQuery(url, mHttpParameter);
+		if (responseText != null && !responseText.equals("")) {
+			ResponseFindJobDetail rs = new Gson().fromJson(responseText, ResponseFindJobDetail.class);
 			return rs;
 		}
 		else{

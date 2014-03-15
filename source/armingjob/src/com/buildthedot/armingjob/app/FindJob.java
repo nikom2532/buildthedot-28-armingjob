@@ -54,7 +54,8 @@ public class FindJob extends Activity  {
 	final Handler myHandler = new Handler();
 	
 	public class codeLeanChapter {
-		String titlejob;
+		String jobID;
+		String position_thai;
 		String companyName;
 		String address;
 		String date_start;
@@ -111,8 +112,12 @@ public class FindJob extends Activity  {
 				
 				codeLeanChapter chapter = chapterListAdapter.getCodeLearnChapter(arg2);
 				
-				Toast.makeText(FindJob.this, chapter.titlejob,Toast.LENGTH_LONG).show();
+//				Toast.makeText(FindJob.this, chapter.position_thai,Toast.LENGTH_LONG).show();
 				
+				pref.deleteString("DB_job_jobID");
+				pref.setString("DB_job_jobID", chapter.jobID);
+				Intent i = new Intent(FindJob.this, FindJobDetail.class);
+				startActivity(i);
 			}
 		});
 	}
@@ -152,14 +157,14 @@ public class FindJob extends Activity  {
 				LayoutInflater inflater = (LayoutInflater) FindJob.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 				arg1 = inflater.inflate(R.layout.findjoblist, arg2,false);
 			}
-			TextView titlejob = (TextView)arg1.findViewById(R.id.armingjob_findjob_value_titlejob);
+			TextView position_thai = (TextView)arg1.findViewById(R.id.armingjob_findjob_value_titlejob);
 			TextView companyName = (TextView)arg1.findViewById(R.id.armingjob_findjob_value_companyName);
 			TextView address = (TextView)arg1.findViewById(R.id.armingjob_findjob_value_address);
 			TextView date_start = (TextView)arg1.findViewById(R.id.armingjob_findjob_value_time);
 			
 			codeLeanChapter chapter = codeLeanChapterList.get(arg0);
 			
-			titlejob.setText(chapter.titlejob);
+			position_thai.setText(chapter.position_thai);
 			companyName.setText(chapter.companyName);
 			address.setText(chapter.address);
 			date_start.setText(chapter.date_start);
@@ -222,7 +227,8 @@ public class FindJob extends Activity  {
     	
     	for(int i=0; i<DB_job_jobID.size(); i++) {
     		codeLeanChapter chapter = new codeLeanChapter();
-    		chapter.titlejob = DB_job_jobID.get(i);
+    		chapter.jobID = DB_job_jobID.get(i);
+    		chapter.position_thai = DB_job_position_thai.get(i);
     		chapter.companyName = DB_job_CompanyID.get(i);
     		chapter.address = "" + i;
     		chapter.date_start = DB_job_date_start.get(i);
