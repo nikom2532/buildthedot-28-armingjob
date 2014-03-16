@@ -36,7 +36,7 @@ import com.buildthedot.armingjob.service.SharedPref2;
 
 public class FindJob extends Activity  {
 	
-	public SharedPref pref = new SharedPref(FindJob.this);
+	SharedPref pref = new SharedPref(FindJob.this);
 	ArrayList<String> DB_job_jobID = new ArrayList<String>();
 	ArrayList<String> DB_job_CompanyID = new ArrayList<String>();
 	ArrayList<String> DB_job_position_thai = new ArrayList<String>();
