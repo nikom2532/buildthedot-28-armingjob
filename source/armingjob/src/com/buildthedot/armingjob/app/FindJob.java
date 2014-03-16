@@ -115,16 +115,11 @@ public class FindJob extends Activity  {
 				
 				pref.deleteString("DB_job_jobID");
 				pref.setString("DB_job_jobID", chapter.jobID);
+				Log.v("----------------------", pref.getString("DB_job_jobID"));
 				Intent i = new Intent(FindJob.this, FindJobDetail.class);
 				startActivity(i);
 			}
 		});
-	}
-	
-	//#################################
-	
-	public class FindJobDetail{
-		
 	}
 	
 	//#################################

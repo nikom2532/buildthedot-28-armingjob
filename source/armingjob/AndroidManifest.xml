@@ -48,6 +48,10 @@
             android:name="com.buildthedot.armingjob.app.FindJob"
             android:screenOrientation="portrait" >
         </activity>
+        <activity
+            android:name="com.buildthedot.armingjob.app.FindJobDetail"
+            android:screenOrientation="portrait" >
+        </activity>
     </application>
 
 </manifest>

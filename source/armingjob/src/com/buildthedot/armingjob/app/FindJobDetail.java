@@ -43,12 +43,12 @@ public class FindJobDetail extends Activity  {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.findjob);
+		setContentView(R.layout.findjobdetail);
 		setView();
 	}
 	
 	public void setView(){
-		new getFindJob().execute();
+//		new getFindJob().execute();
 	}
 	
 	//############# Class 
