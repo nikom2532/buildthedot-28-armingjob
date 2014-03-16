@@ -93,7 +93,6 @@ public class FindJob extends Activity  {
 				DB_job_date_start.set(i, String.valueOf(Integer.parseInt(DB_job_date_start.get(i)) + 1000));
 				date_start2.setText(String.valueOf(DB_job_date_start.get(i)));
 			}
-//			Log.v("test", chapterListAdapter.);
 		}
 	};
 	
@@ -208,6 +207,12 @@ public class FindJob extends Activity  {
 				DB_job_jobID.add(result.data.get(i).jobID);
 				DB_job_CompanyID.add(result.data.get(i).CompanyID);
 				DB_job_date_start.add(result.data.get(i).date_start);
+				DB_job_position_thai.add(result.data.get(i).position_thai);
+				DB_job_position_eng.add(result.data.get(i).position_eng);
+				DB_job_salary.add(result.data.get(i).salary);
+				DB_job_job_description.add(result.data.get(i).job_description);
+				DB_job_date_end.add(result.data.get(i).date_end);
+				DB_job_job_type.add(result.data.get(i).job_type);
 			}
 			setView();
 			TextTimer();

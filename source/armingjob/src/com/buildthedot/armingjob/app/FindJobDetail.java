@@ -81,7 +81,7 @@ public class FindJobDetail extends Activity  {
 			super.onPostExecute(result);
 			dialog.dismiss();
 			
-			
+			Log.v("result_findjobdetail", result.position_eng);
 			
 			 
 		}
