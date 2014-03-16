@@ -1,7 +1,6 @@
 package com.buildthedot.armingjob.app;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -32,11 +31,12 @@ import com.buildthedot.armingjob.function.FindjobListAdapter;
 import com.buildthedot.armingjob.response.ResponseAuthen;
 import com.buildthedot.armingjob.response.ResponseFindJobDefault;
 import com.buildthedot.armingjob.service.ConnectApi;
+import com.buildthedot.armingjob.service.SharedPref;
 import com.buildthedot.armingjob.service.SharedPref2;
 
 public class FindJob extends Activity  {
 	
-	SharedPref2 pref = new SharedPref2(FindJob.this);
+	public SharedPref pref = new SharedPref(FindJob.this);
 	ArrayList<String> DB_job_jobID = new ArrayList<String>();
 	ArrayList<String> DB_job_CompanyID = new ArrayList<String>();
 	ArrayList<String> DB_job_position_thai = new ArrayList<String>();
@@ -113,9 +113,9 @@ public class FindJob extends Activity  {
 				
 //				Toast.makeText(FindJob.this, chapter.position_thai,Toast.LENGTH_LONG).show();
 				
-				pref.deleteString("DB_job_jobID");
-				pref.setString("DB_job_jobID", chapter.jobID);
-				Log.v("----------------------", pref.getString("DB_job_jobID"));
+				pref.del_DB_job_jobID();
+				pref.set_DB_job_jobID(chapter.jobID);
+				Log.v("----------------------", pref.get_DB_job_jobID());
 				Intent i = new Intent(FindJob.this, FindJobDetail.class);
 				startActivity(i);
 			}

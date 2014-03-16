@@ -34,11 +34,21 @@ import com.buildthedot.armingjob.response.ResponseAuthen;
 import com.buildthedot.armingjob.response.ResponseFindJobDefault;
 import com.buildthedot.armingjob.response.ResponseFindJobDetail;
 import com.buildthedot.armingjob.service.ConnectApi;
+import com.buildthedot.armingjob.service.SharedPref;
 import com.buildthedot.armingjob.service.SharedPref2;
 
 public class FindJobDetail extends Activity  {
 	
-	SharedPref2 pref = new SharedPref2(FindJobDetail.this);
+	SharedPref pref = new SharedPref(FindJobDetail.this);
+	String DB_job_jobID = null;
+	String DB_job_CompanyID = null;
+	String DB_job_position_thai = null;
+	String DB_job_position_eng = null;
+	String DB_job_salary = null;
+	String DB_job_job_description = null;
+	String DB_job_date_start = null;
+	String DB_job_date_end = null;
+	String DB_job_job_type = null;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +58,7 @@ public class FindJobDetail extends Activity  {
 	}
 	
 	public void setView(){
-//		new getFindJob().execute();
+		new getFindJob().execute();
 	}
 	
 	//############# Class 
@@ -59,7 +69,8 @@ public class FindJobDetail extends Activity  {
 		RequestFindJobDetail requestFindJobDetail = new RequestFindJobDetail();
 		
 		public getFindJob(){
-			requestFindJobDetail.jobID = pref.getString("DB_job_jobID");
+			Log.v("DB_job_jobID", pref.get_DB_job_jobID());
+			requestFindJobDetail.jobID = pref.get_DB_job_jobID();
 		}
 		
 		@Override
@@ -81,7 +92,7 @@ public class FindJobDetail extends Activity  {
 			super.onPostExecute(result);
 			dialog.dismiss();
 			
-			Log.v("result_findjobdetail", result.position_eng);
+//			Log.v("result_findjobdetail", result.position_eng);
 			
 			 
 		}
