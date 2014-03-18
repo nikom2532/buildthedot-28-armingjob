@@ -97,11 +97,11 @@ public class FindJobDetail extends Activity  {
 			super.onPostExecute(result);
 			dialog.dismiss();
 			
-//			Log.v("result_findjobdetail", result.position_eng);
-			armingjob_findjob_value_titlejob.setText(DB_job_position_thai);
-			armingjob_findjob_value_companyName.setText(DB_job_CompanyID);
-			armingjob_findjob_value_address.setText("");
-			armingjob_findjob_value_time.setText(DB_job_date_start);
+			Log.v("result_findjobdetail", result.position_eng);
+//			armingjob_findjob_value_titlejob.setText(DB_job_position_thai);
+//			armingjob_findjob_value_companyName.setText(DB_job_CompanyID);
+//			armingjob_findjob_value_address.setText("");
+//			armingjob_findjob_value_time.setText(DB_job_date_start);
 		}
 		
 	}

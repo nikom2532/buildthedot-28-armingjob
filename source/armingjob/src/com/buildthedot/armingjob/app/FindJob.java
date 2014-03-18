@@ -206,9 +206,7 @@ public class FindJob extends Activity  {
 			setView();
 			TextTimer();
 		}
-		
 	}
-	
 	
 	//#################################
 	//Add list of job in this List
