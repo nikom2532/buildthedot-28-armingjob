@@ -14,29 +14,22 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 
 import com.buildthedot.armingjob.function.DialogProcess;
-import com.buildthedot.armingjob.function.FindjobListAdapter;
-import com.buildthedot.armingjob.response.ResponseAuthen;
 import com.buildthedot.armingjob.response.ResponseFindJobDefault;
 import com.buildthedot.armingjob.service.ConnectApi;
 import com.buildthedot.armingjob.service.SharedPref;
-import com.buildthedot.armingjob.service.SharedPref2;
 
 public class FindJob extends Activity  {
 	
-	SharedPref pref = new SharedPref(FindJob.this);
 	ArrayList<String> DB_job_jobID = new ArrayList<String>();
 	ArrayList<String> DB_job_CompanyID = new ArrayList<String>();
 	ArrayList<String> DB_job_position_thai = new ArrayList<String>();
@@ -113,6 +106,7 @@ public class FindJob extends Activity  {
 				
 //				Toast.makeText(FindJob.this, chapter.position_thai,Toast.LENGTH_LONG).show();
 				
+				SharedPref pref = new SharedPref(FindJob.this);
 				pref.del_DB_job_jobID();
 				pref.set_DB_job_jobID(chapter.jobID);
 				Log.v("----------------------", pref.get_DB_job_jobID());
