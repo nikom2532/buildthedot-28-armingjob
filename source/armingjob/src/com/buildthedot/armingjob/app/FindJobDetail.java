@@ -39,7 +39,6 @@ import com.buildthedot.armingjob.service.SharedPref2;
 
 public class FindJobDetail extends Activity  {
 	
-	SharedPref pref = new SharedPref(FindJobDetail.this);
 	String DB_job_jobID = null;
 	String DB_job_CompanyID = null;
 	String DB_job_position_thai = null;
@@ -49,6 +48,11 @@ public class FindJobDetail extends Activity  {
 	String DB_job_date_start = null;
 	String DB_job_date_end = null;
 	String DB_job_job_type = null;
+	
+	TextView armingjob_findjob_value_titlejob;
+	TextView armingjob_findjob_value_companyName;
+	TextView armingjob_findjob_value_address;
+	TextView armingjob_findjob_value_time;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +73,7 @@ public class FindJobDetail extends Activity  {
 		RequestFindJobDetail requestFindJobDetail = new RequestFindJobDetail();
 		
 		public getFindJob(){
+			SharedPref pref = new SharedPref(FindJobDetail.this);
 			Log.v("DB_job_jobID", pref.get_DB_job_jobID());
 			requestFindJobDetail.jobID = pref.get_DB_job_jobID();
 		}
@@ -93,8 +98,10 @@ public class FindJobDetail extends Activity  {
 			dialog.dismiss();
 			
 //			Log.v("result_findjobdetail", result.position_eng);
-			
-			 
+			armingjob_findjob_value_titlejob.setText(DB_job_position_thai);
+			armingjob_findjob_value_companyName.setText(DB_job_CompanyID);
+			armingjob_findjob_value_address.setText("");
+			armingjob_findjob_value_time.setText(DB_job_date_start);
 		}
 		
 	}
