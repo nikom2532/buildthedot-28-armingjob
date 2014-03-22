@@ -131,11 +131,13 @@ public class ConnectApi {
 	
 	public ResponseFindJobDetail requestFindJobDetail(String jobID){
 		HttpRequestPost post = new HttpRequestPost();
-//		String url = "http://i-ming.com/20140306.imingjob/json/content/findjobdetail.php";
-		String url = "http://i-ming.com/20140306.imingjob/json/content/findjob.php";
+		String url = "http://i-ming.com/20140306.imingjob/json/content/findjobdetail.php";
+//		String url = "http://i-ming.com/20140306.imingjob/json/content/findjob.php";
 		HttpParameter mHttpParameter = new HttpParameter();
 		mHttpParameter.setParam("jobID", jobID);
+		
 		String responseText = post.httpQuery(url, mHttpParameter);
+		
 		if (responseText != null && !responseText.equals("")) {
 			ResponseFindJobDetail rs = new Gson().fromJson(responseText, ResponseFindJobDetail.class);
 			return rs;

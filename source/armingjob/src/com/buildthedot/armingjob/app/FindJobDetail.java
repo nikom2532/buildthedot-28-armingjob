@@ -74,7 +74,7 @@ public class FindJobDetail extends Activity  {
 		
 		public getFindJob(){
 			SharedPref pref = new SharedPref(FindJobDetail.this);
-			Log.v("DB_job_jobID", pref.get_DB_job_jobID());
+//			Log.v("DB_job_jobID", pref.get_DB_job_jobID());
 			requestFindJobDetail.jobID = pref.get_DB_job_jobID();
 		}
 		

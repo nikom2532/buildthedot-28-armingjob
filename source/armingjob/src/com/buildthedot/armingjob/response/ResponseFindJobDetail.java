@@ -7,7 +7,7 @@ public class ResponseFindJobDetail {
 	public String position_eng = "";
 	public String salary = "";
 	public String job_description = "";
+	public String job_type = "";
 	public String date_start = "";
 	public String date_end = "";
-	public String job_type = "";
 }
