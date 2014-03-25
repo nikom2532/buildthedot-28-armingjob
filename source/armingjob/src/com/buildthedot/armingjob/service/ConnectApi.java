@@ -99,7 +99,7 @@ public class ConnectApi {
 		
 		HttpParameter mHttpParameter = new HttpParameter();
 		
-		computeSecurity mConvert = new computeSecurity();
+//		computeSecurity mConvert = new computeSecurity();
 		mHttpParameter.setParam("email", email);
 		
 //		String convertPassword = mConvert.convertToMd5(mConvert.convertToSha1(password))+mConvert.convertToSha1(mConvert.convertToMd5(password));
@@ -133,12 +133,15 @@ public class ConnectApi {
 		HttpRequestPost post = new HttpRequestPost();
 		String url = "http://i-ming.com/20140306.imingjob/json/content/findjobdetail.php";
 //		String url = "http://i-ming.com/20140306.imingjob/json/content/findjob.php";
+//		String url = "http://i-ming.com/20140306.imingjob/json/authen/user.php";
 		HttpParameter mHttpParameter = new HttpParameter();
 		mHttpParameter.setParam("jobID", jobID);
+//		mHttpParameter.setParam("email", email);
+//		mHttpParameter.setParam("password", password);
 		
 		String responseText = post.httpQuery(url, mHttpParameter);
 		
-		if (responseText != null && !responseText.equals("")) {
+		if (responseText != null || !responseText.equals("")) {
 			ResponseFindJobDetail rs = new Gson().fromJson(responseText, ResponseFindJobDetail.class);
 			return rs;
 		}

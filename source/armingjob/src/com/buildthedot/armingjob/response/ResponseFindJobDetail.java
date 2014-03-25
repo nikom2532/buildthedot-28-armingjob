@@ -10,4 +10,5 @@ public class ResponseFindJobDetail {
 	public String job_type = "";
 	public String date_start = "";
 	public String date_end = "";
+	public String message = "";
 }

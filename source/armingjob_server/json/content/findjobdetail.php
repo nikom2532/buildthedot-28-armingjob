@@ -21,7 +21,7 @@
 	
 	$jobID = $_POST["jobID"];
 	
-	$response = array();
+	// $response = array();
 	
 	$sql_user = "
 		SELECT * 
@@ -32,7 +32,7 @@
 	
 	// check for empty result
 	if (@mysql_num_rows($result_user) > 0) {
-	    $response["data"] = array();
+	    // $response["data"] = array();
 	
 		if($row = @mysql_fetch_array($result_user)) {
 			
@@ -47,25 +47,27 @@
 			$data["job_description"] = $row["job_description"];
 			$data["job_type"] = $row["job_type"];
 			
-			
-			
 			$data["date_start"] = strtotime($row["date_start"]);
 			$data["date_end"] = strtotime($row["date_end"]);
 			
+			$data["message"] = "1";
+			
 	        // push single product into final response array
-	        array_push($response["data"], $data);
+	        // array_push($response["data"], $data);
 	    }
 	    // success
 	    //$response["success"] = 1;
 	
 	    // echoing JSON response
-	    echo json_encode($response);
+	    echo json_encode($data);
 	} else {
 	    // no data found
 	    //$response["success"] = 0;
 	    //$response["message"] = "No data found";
 	
 	    // echo no users JSON
-	    echo json_encode($response);
+	    $data["message"] = "0";
+	    
+	    echo json_encode($data);
 	}
 ?>

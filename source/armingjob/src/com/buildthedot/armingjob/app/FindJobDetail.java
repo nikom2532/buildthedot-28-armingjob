@@ -39,15 +39,15 @@ import com.buildthedot.armingjob.service.SharedPref2;
 
 public class FindJobDetail extends Activity  {
 	
-	String DB_job_jobID = null;
-	String DB_job_CompanyID = null;
-	String DB_job_position_thai = null;
-	String DB_job_position_eng = null;
-	String DB_job_salary = null;
-	String DB_job_job_description = null;
-	String DB_job_date_start = null;
-	String DB_job_date_end = null;
-	String DB_job_job_type = null;
+//	String DB_job_jobID = null;
+//	String DB_job_CompanyID = null;
+//	String DB_job_position_thai = null;
+//	String DB_job_position_eng = null;
+//	String DB_job_salary = null;
+//	String DB_job_job_description = null;
+//	String DB_job_date_start = null;
+//	String DB_job_date_end = null;
+//	String DB_job_job_type = null;
 	
 	TextView armingjob_findjob_value_titlejob;
 	TextView armingjob_findjob_value_companyName;
@@ -88,7 +88,7 @@ public class FindJobDetail extends Activity  {
 		protected ResponseFindJobDetail doInBackground(String... params) {
 			// TODO Auto-generated method stub
 			
-	    	ResponseFindJobDetail responseFindJobDetail = connApi.requestFindJobDetail(requestFindJobDetail.jobID);
+			ResponseFindJobDetail responseFindJobDetail = connApi.requestFindJobDetail(requestFindJobDetail.jobID);
 			return responseFindJobDetail;
 		}
 		
@@ -97,12 +97,11 @@ public class FindJobDetail extends Activity  {
 			super.onPostExecute(result);
 			dialog.dismiss();
 			
-			Log.v("result_findjobdetail", result.position_eng);
+			Log.v("result_findjobdetail", result.jobID);
 //			armingjob_findjob_value_titlejob.setText(DB_job_position_thai);
 //			armingjob_findjob_value_companyName.setText(DB_job_CompanyID);
 //			armingjob_findjob_value_address.setText("");
 //			armingjob_findjob_value_time.setText(DB_job_date_start);
 		}
-		
 	}
 }
