@@ -112,6 +112,52 @@
     </LinearLayout>
     
     <LinearLayout
+        android:id="@+id/armingjob_findjob_LinearLayout_salary"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/armingjob_findjob_LinearLayout_address"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal" >
+
+        
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/icon_location2" />
+        
+        <TextView
+            android:id="@+id/armingjob_findjob_value_salary"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/armingjob_findjob_LinearLayout_job_description"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/armingjob_findjob_LinearLayout_address"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal" >
+
+        
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/icon_location2" />
+        
+        <TextView
+            android:id="@+id/armingjob_findjob_value_job_description"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+    
+    <LinearLayout
         android:id="@+id/armingjob_findjob_LinearLayout_time"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
