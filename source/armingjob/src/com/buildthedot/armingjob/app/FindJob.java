@@ -31,9 +31,10 @@ import com.buildthedot.armingjob.service.SharedPref;
 public class FindJob extends Activity  {
 	
 	ArrayList<String> DB_job_jobID = new ArrayList<String>();
-	ArrayList<String> DB_job_CompanyID = new ArrayList<String>();
+	ArrayList<String> DB_job_CompanyName = new ArrayList<String>();
 	ArrayList<String> DB_job_position_thai = new ArrayList<String>();
 	ArrayList<String> DB_job_position_eng = new ArrayList<String>();
+	ArrayList<String> DB_job_short_address = new ArrayList<String>();
 	ArrayList<String> DB_job_salary = new ArrayList<String>();
 	ArrayList<String> DB_job_job_description = new ArrayList<String>();
 	ArrayList<String> DB_job_date_start = new ArrayList<String>();
@@ -194,10 +195,13 @@ public class FindJob extends Activity  {
 			
 			for(int i=0; i<result.data.size(); i++){
 				DB_job_jobID.add(result.data.get(i).jobID);
-				DB_job_CompanyID.add(result.data.get(i).CompanyID);
+				DB_job_CompanyName.add(result.data.get(i).CompanyName);
 				DB_job_date_start.add(result.data.get(i).date_start);
 				DB_job_position_thai.add(result.data.get(i).position_thai);
 				DB_job_position_eng.add(result.data.get(i).position_eng);
+				
+				DB_job_short_address.add(result.data.get(i).short_address);
+				
 				DB_job_salary.add(result.data.get(i).salary);
 				DB_job_job_description.add(result.data.get(i).job_description);
 				DB_job_date_end.add(result.data.get(i).date_end);
@@ -221,8 +225,8 @@ public class FindJob extends Activity  {
     		codeLeanChapter chapter = new codeLeanChapter();
     		chapter.jobID = DB_job_jobID.get(i);
     		chapter.position_thai = DB_job_position_thai.get(i);
-    		chapter.companyName = DB_job_CompanyID.get(i);
-    		chapter.address = "" + i;
+    		chapter.companyName = DB_job_CompanyName.get(i);
+    		chapter.address = "" + DB_job_short_address.get(i);
     		chapter.date_start = DB_job_date_start.get(i);
     		codeLeanChaptersList.add(chapter);
     	}

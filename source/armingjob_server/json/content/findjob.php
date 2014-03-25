@@ -45,7 +45,7 @@
 			";
 			$result_company = @mysql_query($sql_company);
 			if($rs_company = @mysql_fetch_array($result_company)){
-		        $data["CompanyID"] = $rs_company["company_name"];
+		        $data["CompanyName"] = $rs_company["company_name"];
 			}
 			
 			$data["position_thai"] = $row["position_thai"];
