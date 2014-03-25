@@ -62,6 +62,11 @@ public class FindJobDetail extends Activity  {
 	}
 	
 	public void setView(){
+		armingjob_findjob_value_titlejob = (TextView) findViewById(R.id.armingjob_findjob_value_titlejob);
+		armingjob_findjob_value_companyName = (TextView) findViewById(R.id.armingjob_findjob_value_companyName);
+		armingjob_findjob_value_address = (TextView) findViewById(R.id.armingjob_findjob_value_address);
+		armingjob_findjob_value_time = (TextView) findViewById(R.id.armingjob_findjob_value_time);
+		
 		new getFindJob().execute();
 	}
 	
