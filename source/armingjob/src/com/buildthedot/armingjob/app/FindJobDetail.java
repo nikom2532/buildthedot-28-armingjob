@@ -98,10 +98,10 @@ public class FindJobDetail extends Activity  {
 			dialog.dismiss();
 			
 			Log.v("result_findjobdetail", result.jobID);
-//			armingjob_findjob_value_titlejob.setText(DB_job_position_thai);
-//			armingjob_findjob_value_companyName.setText(DB_job_CompanyID);
-//			armingjob_findjob_value_address.setText("");
-//			armingjob_findjob_value_time.setText(DB_job_date_start);
+			armingjob_findjob_value_titlejob.setText(result.position_thai);
+			armingjob_findjob_value_companyName.setText(result.CompanyID);
+			armingjob_findjob_value_address.setText("");
+			armingjob_findjob_value_time.setText(result.date_start);
 		}
 	}
 }
