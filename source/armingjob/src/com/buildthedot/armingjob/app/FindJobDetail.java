@@ -29,6 +29,7 @@ import android.content.Intent;
 
 import com.buildthedot.armingjob.function.DialogProcess;
 import com.buildthedot.armingjob.function.FindjobListAdapter;
+import com.buildthedot.armingjob.function.PopupDialog;
 import com.buildthedot.armingjob.request.RequestFindJobDetail;
 import com.buildthedot.armingjob.response.ResponseAuthen;
 import com.buildthedot.armingjob.response.ResponseFindJobDefault;
@@ -53,6 +54,8 @@ public class FindJobDetail extends Activity  {
 	TextView armingjob_findjob_value_companyName;
 	TextView armingjob_findjob_value_address;
 	TextView armingjob_findjob_value_time;
+	
+	PopupDialog popup = new PopupDialog(FindJobDetail.this);
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -102,11 +105,22 @@ public class FindJobDetail extends Activity  {
 			super.onPostExecute(result);
 			dialog.dismiss();
 			
-			Log.v("result_findjobdetail", result.jobID);
-			armingjob_findjob_value_titlejob.setText(result.position_thai);
-			armingjob_findjob_value_companyName.setText(result.CompanyID);
-			armingjob_findjob_value_address.setText("");
-			armingjob_findjob_value_time.setText(result.date_start);
+			if(result.message.equals("1")){
+				
+				Log.v("result_findjobdetail", result.jobID);
+				armingjob_findjob_value_titlejob.setText(result.position_thai);
+				armingjob_findjob_value_companyName.setText(result.CompanyID);
+				armingjob_findjob_value_address.setText("");
+				armingjob_findjob_value_time.setText(result.date_start);
+				
+				
+			}
+			else if(result.message.equals("0")){
+				popup.show("", "Error occur, please type again");
+				Intent i = new Intent(FindJobDetail.this, FindJob.class);
+				startActivity(i);
+			}
+			
 		}
 	}
 }
