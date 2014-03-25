@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 25, 2014 at 04:04 PM
+-- Generation Time: Mar 25, 2014 at 10:16 PM
 -- Server version: 5.1.68
 -- PHP Version: 5.3.27
 
@@ -43,8 +43,8 @@ CREATE TABLE IF NOT EXISTS `buildthedot_armingjob_company` (
 --
 
 INSERT INTO `buildthedot_armingjob_company` (`id`, `company_name`, `website`, `company_pic`, `short_address`, `full_address`, `time`) VALUES
-(1, 'JASPAL', 'http://www.jaspal.com/', '', '', '', '2014-01-23 02:45:23'),
-(2, 'Whiteboard.Co.,Ltd.', '', '', '', '', '2014-03-25 05:22:22');
+(1, 'JASPAL', 'http://www.jaspal.com/', '', 'US', 'US', '2014-01-23 02:45:23'),
+(2, 'Whiteboard.Co.,Ltd.', '', '', 'TH', 'TH', '2014-03-25 05:22:22');
 
 -- --------------------------------------------------------
 

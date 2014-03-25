@@ -34,7 +34,7 @@ public class FindJob extends Activity  {
 	ArrayList<String> DB_job_CompanyName = new ArrayList<String>();
 	ArrayList<String> DB_job_position_thai = new ArrayList<String>();
 	ArrayList<String> DB_job_position_eng = new ArrayList<String>();
-	ArrayList<String> DB_job_short_address = new ArrayList<String>();
+	ArrayList<String> DB_job_CompanyAddress = new ArrayList<String>();
 	ArrayList<String> DB_job_salary = new ArrayList<String>();
 	ArrayList<String> DB_job_job_description = new ArrayList<String>();
 	ArrayList<String> DB_job_date_start = new ArrayList<String>();
@@ -200,7 +200,7 @@ public class FindJob extends Activity  {
 				DB_job_position_thai.add(result.data.get(i).position_thai);
 				DB_job_position_eng.add(result.data.get(i).position_eng);
 				
-				DB_job_short_address.add(result.data.get(i).short_address);
+				DB_job_CompanyAddress.add(result.data.get(i).CompanyAddress);
 				
 				DB_job_salary.add(result.data.get(i).salary);
 				DB_job_job_description.add(result.data.get(i).job_description);
@@ -226,7 +226,7 @@ public class FindJob extends Activity  {
     		chapter.jobID = DB_job_jobID.get(i);
     		chapter.position_thai = DB_job_position_thai.get(i);
     		chapter.companyName = DB_job_CompanyName.get(i);
-    		chapter.address = "" + DB_job_short_address.get(i);
+    		chapter.address = "" + DB_job_CompanyAddress.get(i);
     		chapter.date_start = DB_job_date_start.get(i);
     		codeLeanChaptersList.add(chapter);
     	}

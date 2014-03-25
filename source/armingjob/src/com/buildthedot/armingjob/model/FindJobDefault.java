@@ -5,7 +5,7 @@ public class FindJobDefault {
 	public String CompanyName = "";
 	public String position_thai = "";
 	public String position_eng = "";
-	public String short_address = "";
+	public String CompanyAddress = "";
 	public String salary = "";
 	public String job_description = "";
 	public String date_start = "";
