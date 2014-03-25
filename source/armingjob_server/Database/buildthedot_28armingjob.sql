@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.6deb1
+-- version 3.5.7
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 14, 2014 at 07:00 PM
--- Server version: 5.5.35-0ubuntu0.13.10.2
--- PHP Version: 5.5.3-1ubuntu2.2
+-- Generation Time: Mar 25, 2014 at 04:04 PM
+-- Server version: 5.1.68
+-- PHP Version: 5.3.27
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `buildthedot_28armingjob`
+-- Database: `imingcom_DB`
 --
 
 -- --------------------------------------------------------
@@ -36,14 +36,15 @@ CREATE TABLE IF NOT EXISTS `buildthedot_armingjob_company` (
   `time` datetime NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `TopCompanyName` (`company_name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `buildthedot_armingjob_company`
 --
 
 INSERT INTO `buildthedot_armingjob_company` (`id`, `company_name`, `website`, `company_pic`, `short_address`, `full_address`, `time`) VALUES
-(1, 'JASPAL', 'http://www.jaspal.com/', '', '', '', '2014-01-23 02:45:23');
+(1, 'JASPAL', 'http://www.jaspal.com/', '', '', '', '2014-01-23 02:45:23'),
+(2, 'Whiteboard.Co.,Ltd.', '', '', '', '', '2014-03-25 05:22:22');
 
 -- --------------------------------------------------------
 
@@ -69,8 +70,8 @@ CREATE TABLE IF NOT EXISTS `buildthedot_armingjob_job` (
 --
 
 INSERT INTO `buildthedot_armingjob_job` (`id`, `company_id`, `position_thai`, `position_eng`, `salary`, `job_description`, `date_start`, `date_end`, `job_type`) VALUES
-(1, 'Whiteboard.Co.,Ltd.', 'Marketing / Business Development', 'Marketing / Business Development', '3x,xxx ', 'Whiteboard is a small company that provided creative business IT solutions to our customers. We are expanding our business scope to both IT and Non-IT related business.\r\n \r\nJob Description : Establish relationships with customers B2B, or B2C. / Calling, or visiting clients on a regular basis, promoting features and benefits of the company products and services./ Develop new potential markets. /Develop and implement marketing plan. /Analyze the strengths and weaknesses of competitors, and monitor new trends. \r\n', '2013-11-22 00:00:00', '2014-12-22 00:00:00', 1),
-(2, 'aaaa', 'aaaaaaa', 'aaaaaaaaaaa', '10000', 'aaaaaa', '2014-01-08 00:00:00', '2014-01-17 00:00:00', 2);
+(1, '2', 'Marketing / Business Development', 'Marketing / Business Development', '3x,xxx ', 'Whiteboard is a small company that provided creative business IT solutions to our customers. We are expanding our business scope to both IT and Non-IT related business.\r\n \r\nJob Description : Establish relationships with customers B2B, or B2C. / Calling, or visiting clients on a regular basis, promoting features and benefits of the company products and services./ Develop new potential markets. /Develop and implement marketing plan. /Analyze the strengths and weaknesses of competitors, and monitor new trends. \r\n', '2013-11-22 00:00:00', '2014-12-22 00:00:00', 1),
+(2, '1', 'aaaaaaa', 'aaaaaaaaaaa', '10000', 'aaaaaa', '2014-01-08 00:00:00', '2014-01-17 00:00:00', 2);
 
 -- --------------------------------------------------------
 

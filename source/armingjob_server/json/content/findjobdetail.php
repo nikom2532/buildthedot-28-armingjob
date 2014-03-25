@@ -39,7 +39,16 @@
 	        // temp user array
 	        $data = array();
 	        $data["jobID"] = $row["id"];
-	        $data["CompanyID"] = $row["company_id"];
+	        
+			$sql_company = "
+				SELECT * 
+				FROM  `buildthedot_armingjob_company` 
+				WHERE `id` = {$row["company_id"]}
+			";
+			$result_company = @mysql_query($sql_company);
+			if($rs_company = @mysql_fetch_array($result_company)){
+		        $data["CompanyID"] = $rs_company["company_name"];
+			}
 			
 			$data["position_thai"] = $row["position_thai"];
 			$data["position_eng"] = $row["position_eng"];
