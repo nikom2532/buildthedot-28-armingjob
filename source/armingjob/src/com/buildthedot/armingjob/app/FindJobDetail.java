@@ -25,6 +25,7 @@ import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 
 import com.buildthedot.armingjob.function.DialogProcess;
@@ -116,9 +117,17 @@ public class FindJobDetail extends Activity  {
 				
 			}
 			else if(result.message.equals("0")){
-				popup.show("", "Error occur, please type again");
-				Intent i = new Intent(FindJobDetail.this, FindJob.class);
-				startActivity(i);
+				popup.show(
+					"Error occur, please type again", 
+					"OK",
+					new DialogInterface.OnClickListener() {
+
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+							finish();
+						}
+					}
+				);
 			}
 			
 		}
