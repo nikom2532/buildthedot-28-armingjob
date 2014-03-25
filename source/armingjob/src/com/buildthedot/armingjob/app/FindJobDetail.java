@@ -111,7 +111,7 @@ public class FindJobDetail extends Activity  {
 				Log.v("result_findjobdetail", result.jobID);
 				armingjob_findjob_value_titlejob.setText(result.position_thai);
 				armingjob_findjob_value_companyName.setText(result.CompanyName);
-				armingjob_findjob_value_address.setText("");
+				armingjob_findjob_value_address.setText(result.CompanyAddress);
 				armingjob_findjob_value_time.setText(result.date_start);
 				
 				

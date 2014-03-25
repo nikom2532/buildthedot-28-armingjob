@@ -5,7 +5,7 @@ public class ResponseFindJobDetail {
 	public String CompanyName = "";
 	public String position_thai = "";
 	public String position_eng = "";
-	public String full_address = "";
+	public String CompanyAddress = "";
 	public String salary = "";
 	public String job_description = "";
 	public String job_type = "";
