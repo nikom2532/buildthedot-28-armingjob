@@ -36,9 +36,9 @@ public class HomePage extends Activity implements OnClickListener {
 			finish();
 		}
 		else if(armingjob_mainmenu_register.equals(v)){
-//			Intent i = new Intent(HomePage.this, Login.class);
-//			startActivity(i);
-//			finish();
+			Intent i = new Intent(HomePage.this, Register.class);
+			startActivity(i);
+			finish();
 		}
 	}
 
